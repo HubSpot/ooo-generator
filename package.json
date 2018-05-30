@@ -24,10 +24,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "prettier": "^1.12.0"
   }
 }
