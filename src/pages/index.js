@@ -34,7 +34,6 @@ export const query = graphql`
   query SiteMeta {
     site {
       id
-      host
       siteMetadata {
         title
         tagline
