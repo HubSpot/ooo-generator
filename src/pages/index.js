@@ -18,12 +18,19 @@ const Tagline = styled.h3`
   text-transform: uppercase;
 `;
 
+const Soon = styled(Tagline)`
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 100px;
+`;
+
 const IndexPage = ({ data }) => {
   const { site } = data;
   return (
     <div>
       <Header>{site.siteMetadata.title}</Header>
       <Tagline>{site.siteMetadata.tagline}</Tagline>
+      <Soon>Coming Soon...</Soon>
     </div>
   );
 };
