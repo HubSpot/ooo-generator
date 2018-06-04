@@ -5,6 +5,5 @@ module.exports = {
     keywords: 'OOO vacation email generator fun hubspot',
     tagline: 'Because taking vacation should be fun.',
   },
-  pathPrefix: '/ooo-generator',
   plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
 };
