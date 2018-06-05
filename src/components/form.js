@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import 'react-dates/initialize';
+import {
+  DateRangePicker,
+  SingleDatePicker,
+  DayPickerRangeController,
+} from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 
 import Page from './page';
 
@@ -26,7 +33,12 @@ const theme = createMuiTheme({
   },
 });
 
-export default class Intro extends React.Component {
+export default class Form extends React.Component {
+  state = {
+    startDate: null,
+    endDate: null,
+  };
+
   render() {
     return (
       <Page>
@@ -62,6 +74,24 @@ export default class Intro extends React.Component {
                   label="Last name"
                   id="last"
                   name="last"
+                />
+              </Box>
+            </Flex>
+            <Flex justify="center">
+              <Box px={3} pt={4} width={2 / 3}>
+                <DateRangePicker
+                  startDate={this.state.startDate}
+                  startDateId="date-start"
+                  endDate={this.state.endDate}
+                  endDateId="date-end"
+                  onDatesChange={({ startDate, endDate }) =>
+                    this.setState({ startDate, endDate })
+                  }
+                  focusedInput={this.state.focusedInput}
+                  onFocusChange={focusedInput =>
+                    this.setState({ focusedInput })
+                  }
+                  showClearDates={true}
                 />
               </Box>
             </Flex>
