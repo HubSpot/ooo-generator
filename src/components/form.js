@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Flex, Box } from 'rebass';
+import TextField from '@material-ui/core/TextField';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 import Page from './page';
 
 const Header = styled.h1`
@@ -9,6 +13,18 @@ const Header = styled.h1`
   text-transform: uppercase;
   margin-bottom: 25px;
 `;
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: 'rgb(236, 171, 164)',
+      dark: 'rgb(236, 171, 164)',
+    },
+    text: {
+      primary: 'rgb(236, 171, 164)',
+    },
+  },
+});
 
 export default class Intro extends React.Component {
   render() {
@@ -27,6 +43,30 @@ export default class Intro extends React.Component {
           Share quick details about your time away and the generator will give
           you an 'OOO' email that's as fun as your vacation. (Well, almost.)
         </p>
+        <MuiThemeProvider theme={theme}>
+          <form>
+            <Flex justify="center">
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="First name"
+                  id="first"
+                  name="first"
+                />
+              </Box>
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Last name"
+                  id="last"
+                  name="last"
+                />
+              </Box>
+            </Flex>
+          </form>
+        </MuiThemeProvider>
       </Page>
     );
   }

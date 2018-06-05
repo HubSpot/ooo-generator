@@ -29,7 +29,7 @@ const Shell = styled.main`
 
 export class Page extends React.Component {
   static propTypes = {
-    align: PropTypes.oneOf('center', 'default'),
+    align: PropTypes.oneOf(['center', 'default']),
     plain: PropTypes.bool,
   };
   static defaultProps = {
