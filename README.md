@@ -4,13 +4,10 @@ Generate Out of Office Email messages. Because taking vacation should be fun.
 
 ---
 
-TODO:
-
-* [ ] Kollektif needs visual attribution on the site; is there an alternative?
-
 Fonts used:
 
-* [Kollektif](http://www.bravenewfonts.com/)
+* ~~[Kollektif](http://www.bravenewfonts.com/)~~
+* [Comfortaa](https://fonts.google.com/specimen/Comfortaa)
 * [Peace Sans](https://www.behance.net/gallery/34760019/Peace-Sans-FREE-FONT)
 
 ---

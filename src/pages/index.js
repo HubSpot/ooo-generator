@@ -11,10 +11,10 @@ const Header = styled.h1`
 `;
 
 const Tagline = styled.h3`
-  font-family: Kollektif;
+  font-family: Comfortaa;
   font-size: 24px;
   line-height: 1.5;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 `;
 

@@ -1,15 +1,9 @@
 @import './normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 @font-face {
   font-family: 'peace_sansregular';
   src: url('./fonts/peace.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Kollektif';
-  src: url('./fonts/kollektif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
