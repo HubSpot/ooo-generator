@@ -19,18 +19,11 @@ const Tagline = styled.h3`
   text-transform: uppercase;
 `;
 
-const Soon = styled(Tagline)`
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 100px;
-`;
-
 const IntroPage = ({ title, tagline }) => {
   return (
     <Page align="center" plain={false}>
       <Header>{title}</Header>
       <Tagline>{tagline}</Tagline>
-      <Soon>Coming Soon...</Soon>
     </Page>
   );
 };
