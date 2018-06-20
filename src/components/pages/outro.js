@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 
 import Page from '../page';
+import palm from '../../images/palmtree.png';
 import logo from '../../images/hubspotlogo-web-white.png';
 
 const Header = styled.h1`
@@ -11,20 +12,30 @@ const Header = styled.h1`
   font-weight: normal;
   line-height: 1.3;
   text-transform: uppercase;
-  margin-bottom: 0;
+  margin-bottom: 25px;
 `;
 
 const Tagline = styled.h3`
   font-family: Comfortaa;
   font-size: 22px;
+  margin-bottom: 25px;
+`;
+
+const Palms = styled.div`
+  opacity: 0.2;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-image: url(${palm});
+  background-size: 300px auto;
 `;
 
 const IntroPage = ({ title, tagline }) => {
   return (
-    <Page plain={false} align="center">
+    <Page maxWidth={1050} plain={false} align="center">
       <Flex style={{textAlign: 'left'}}>
-        <Box width={1/5}>{' '}</Box>
-        <Box width={4/5}>
+        <Box width={300} style={{position: 'relative'}}><Palms /></Box>
+        <Box width={750}>
           <Header>There’s Lots to Love About Vacation.</Header>
           <Tagline>
             Time off from work helps us recharge.<br />
