@@ -32,8 +32,8 @@ const Palms = styled.div`
 
 const IntroPage = ({ title, tagline }) => {
   return (
-    <Page maxWidth={1050} plain={false} align="center">
-      <Flex style={{textAlign: 'left'}}>
+    <Page maxWidth={1050} plain={false} align="center" textAlign="left">
+      <Flex>
         <Box width={300} style={{position: 'relative'}}><Palms /></Box>
         <Box width={750}>
           <Header>There’s Lots to Love About Vacation.</Header>

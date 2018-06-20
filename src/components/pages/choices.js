@@ -31,7 +31,7 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <Page align="default" maxWidth={1200}>
+      <Page align="center" textAlign="left">
         <Header>OOO Messages</Header>
         <SubHead>
           Pick the out of office message that will make your contacts smile.<br />
