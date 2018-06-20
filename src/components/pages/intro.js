@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Page from './page';
+import Page from '../page';
 
 const Header = styled.h1`
   font-family: peace_sansregular;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import IntroPage from '../components/intro';
-import FormPage from '../components/form';
+import IntroPage from '../components/pages/intro';
+import FormPage from '../components/pages/form';
 
 const IndexPage = ({ data }) => {
   const { site } = data;

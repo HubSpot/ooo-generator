@@ -11,7 +11,7 @@ import {
 } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
-import Page from './page';
+import Page from '../page';
 
 const Header = styled.h1`
   font-family: peace_sansregular;
