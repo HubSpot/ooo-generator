@@ -41,7 +41,7 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <Page>
+      <Page align="center">
         <Header>
           You’re Ready For Vacation.<br />But Is Your Inbox?
         </Header>

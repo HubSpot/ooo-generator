@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import IntroPage from '../components/pages/intro';
 import FormPage from '../components/pages/form';
 import LoadingPage from '../components/pages/loading';

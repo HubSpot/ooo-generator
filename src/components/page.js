@@ -15,7 +15,7 @@ const textColors = {
 const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
   max-width: 960px;
-  text-align: center;
+  text-align: ${props => (props.align === 'center' ? 'center' : 'left')};
 `;
 
 const Shell = styled.main`
