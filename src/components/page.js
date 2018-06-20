@@ -14,7 +14,7 @@ const textColors = {
 
 const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
-  max-width: 960px;
+  max-width: ${props => props.maxWidth}px;
   text-align: ${props => (props.align === 'center' ? 'center' : 'left')};
 `;
 
@@ -31,17 +31,19 @@ export class Page extends React.Component {
   static propTypes = {
     align: PropTypes.oneOf(['center', 'default']),
     plain: PropTypes.bool,
+    maxWidth: PropTypes.number,
   };
   static defaultProps = {
     align: 'default',
     plain: true,
+    maxWidth: 960,
   };
 
   render() {
-    const { align, children, ...rest } = this.props;
+    const { align, children, maxWidth, ...rest } = this.props;
     return (
       <Shell {...rest}>
-        <Main align={align}>{children}</Main>
+        <Main align={align} maxWidth={maxWidth}>{children}</Main>
       </Shell>
     );
   }

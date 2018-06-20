@@ -2,6 +2,7 @@ import React from 'react';
 import IntroPage from '../components/pages/intro';
 import FormPage from '../components/pages/form';
 import LoadingPage from '../components/pages/loading';
+import ChoicesPage from '../components/pages/choices';
 
 const IndexPage = ({ data }) => {
   const { site } = data;
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => {
       />
       <FormPage />
       <LoadingPage />
+      <ChoicesPage />
     </div>
   );
 };
