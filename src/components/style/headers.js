@@ -5,7 +5,7 @@ import * as tokens from './tokens';
 
 const fontSizes = {
   xl: 72,
-  lg: 63,
+  lg: 48,
   md: 32,
   sm: 24,
   xs: 8,
@@ -26,6 +26,14 @@ export const H1 = styled(Heading)`
 H1.defaultProps = {
   upper: true,
   size: fontSizes.xl,
+};
+
+export const H2 = styled(Heading)`
+  ${props => baseTextStyles};
+`;
+H2.defaultProps = {
+  upper: true,
+  size: 'lg',
 };
 
 export const H4 = styled(Heading)`

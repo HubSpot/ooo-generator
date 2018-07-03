@@ -2,36 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import 'react-dates/initialize';
-import {
-  DateRangePicker,
-  SingleDatePicker,
-  DayPickerRangeController,
-} from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
+import { DateRangePicker } from '../date-range-picker';
+import { FormStyles } from '../style/material-ui';
+import { H2 } from '../style/headers';
 import Page from '../page';
-
-const Header = styled.h1`
-  font-family: peace_sansregular;
-  font-size: 48px;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-`;
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: 'rgb(236, 171, 164)',
-      dark: 'rgb(236, 171, 164)',
-    },
-    text: {
-      primary: 'rgb(236, 171, 164)',
-    },
-  },
-});
 
 export default class Form extends React.Component {
   state = {
@@ -42,9 +17,9 @@ export default class Form extends React.Component {
   render() {
     return (
       <Page align="center">
-        <Header>
+        <H2 mb={4}>
           You’re Ready For Vacation.<br />But Is Your Inbox?
-        </Header>
+        </H2>
         <p>
           Whether you're going on a tropical trip or signing off for a
           staycation, you have to write an out of office message. So, why not
@@ -55,7 +30,7 @@ export default class Form extends React.Component {
           Share quick details about your time away and the generator will give
           you an 'OOO' email that's as fun as your vacation. (Well, almost.)
         </p>
-        <MuiThemeProvider theme={theme}>
+        <FormStyles>
           <form>
             <Flex justify="center">
               <Box px={3} pt={4} width={1 / 3}>
@@ -96,7 +71,7 @@ export default class Form extends React.Component {
               </Box>
             </Flex>
           </form>
-        </MuiThemeProvider>
+        </FormStyles>
       </Page>
     );
   }
