@@ -3,23 +3,7 @@ import styled from 'styled-components';
 import { Flex, Box, Heading } from 'rebass';
 import Button from '@material-ui/core/Button';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: 'rgb(236, 171, 164)',
-      dark: 'rgb(236, 171, 164)',
-      contrastText: "rgba(255, 255, 255, 0.87)"
-    },
-  },
-  typography: {
-    fontSize: 18,
-    button: {
-      textTransform: "none",
-    },
-  },
-});
+import { ChoiceStyles } from './style/themes';
 
 const Blurb = styled.p`
   margin-top: 8px;
@@ -27,7 +11,7 @@ const Blurb = styled.p`
 
 export default ({ message, title }) => {
   return (
-    <MuiThemeProvider theme={theme}>
+    <ChoiceStyles>
       <Flex alignItems="center" mb={10}>
         <Box width={4 / 5}>
           <Heading fontSize={28} mt={3}>{title}</Heading>
@@ -39,6 +23,6 @@ export default ({ message, title }) => {
           </Flex>
         </Box>
       </Flex>
-    </MuiThemeProvider>
+    </ChoiceStyles>
   );
 };

@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { blackish, pinkish, whiteish } from './style/tokens';
+
 const backgrounds = {
-  festive: 'rgb(236, 171, 164)',
-  plain: 'rgb(255, 255, 255)',
+  festive: pinkish,
+  plain: whiteish,
 };
 
 const textColors = {
-  festive: 'rgb(255, 255, 255)',
-  plain: 'rgb(68, 68, 68)',
+  festive: whiteish,
+  plain: blackish,
 };
 
 const Main = styled.main`

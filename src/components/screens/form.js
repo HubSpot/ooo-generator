@@ -4,7 +4,7 @@ import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
 
 import { DateRangePicker } from '../date-range-picker';
-import { FormStyles } from '../style/material-ui';
+import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 

@@ -3,23 +3,9 @@ import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 
 import Page from '../page';
+import { H1, H5 } from '../style/headers';
 import palm from '../../images/palmtree.png';
 import logo from '../../images/hubspotlogo-web-white.png';
-
-const Header = styled.h1`
-  font-family: peace_sansregular;
-  font-size: 72px;
-  font-weight: normal;
-  line-height: 1.3;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-`;
-
-const Tagline = styled.h3`
-  font-family: Comfortaa;
-  font-size: 22px;
-  margin-bottom: 25px;
-`;
 
 const Palms = styled.div`
   opacity: 0.2;
@@ -36,11 +22,11 @@ const IntroPage = ({ title, tagline }) => {
       <Flex>
         <Box width={300} style={{position: 'relative'}}><Palms /></Box>
         <Box width={750}>
-          <Header>There’s Lots to Love About Vacation.</Header>
-          <Tagline>
+          <H1 my={4}>There’s Lots to Love About Vacation.</H1>
+          <H5 my={4}>
             Time off from work helps us recharge.<br />
-            Whether you relax on the beach, hike a mountain, or spend time with family, taking a (guilt-free) vacation makes you better and happier at the office.</Tagline>
-          <Tagline>That's why HubSpot's a big fan of flexibility. Our unlimited vacation policy (and its OOO messages) is just one way we try to create a flexible, inclusive culture.</Tagline>
+            Whether you relax on the beach, hike a mountain, or spend time with family, taking a (guilt-free) vacation makes you better and happier at the office.</H5>
+          <H5 my={4}>That's why HubSpot's a big fan of flexibility. Our unlimited vacation policy (and its OOO messages) is just one way we try to create a flexible, inclusive culture.</H5>
           <img width="250" src={logo} />
         </Box>
       </Flex>
