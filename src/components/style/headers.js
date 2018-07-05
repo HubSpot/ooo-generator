@@ -10,6 +10,7 @@ const fontSizes = {
   md: 40,
   sm: 24,
   xs: 22,
+  xxs: 18,
 };
 
 const fontFamilies = {
@@ -18,8 +19,7 @@ const fontFamilies = {
 };
 
 const baseTextStyles = css`
-  font-family: ${props =>
-    fontFamilies[props.family] || fontFamilies.peace};
+  font-family: ${props => fontFamilies[props.family] || fontFamilies.peace};
   font-size: ${props =>
     typeof props.size === 'number'
       ? `${props.size}px`
@@ -29,8 +29,19 @@ const baseTextStyles = css`
   text-transform: ${props => (props.upper ? 'uppercase' : 'none')};
 `;
 
+const responsiveFonts = (tablet, mobile) => `
+  @media (max-width: 768px) {
+    font-size: ${tablet}px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: ${mobile}px;
+  }
+`;
+
 export const H1 = styled(Heading)`
   ${props => baseTextStyles};
+  ${responsiveFonts(fontSizes.xl, fontSizes.lg)};
 `;
 H1.defaultProps = {
   upper: true,
@@ -39,6 +50,7 @@ H1.defaultProps = {
 
 export const H2 = styled(Heading)`
   ${props => baseTextStyles};
+  ${responsiveFonts(fontSizes.lg, fontSizes.md)};
 `;
 H2.defaultProps = {
   upper: true,
@@ -47,6 +59,7 @@ H2.defaultProps = {
 
 export const H3 = styled(Heading)`
   ${props => baseTextStyles};
+  ${responsiveFonts(fontSizes.md, fontSizes.sm)};
 `;
 H3.defaultProps = {
   size: 'md',
@@ -55,6 +68,7 @@ H3.defaultProps = {
 
 export const H4 = styled(Heading)`
   ${props => baseTextStyles};
+  ${responsiveFonts(fontSizes.sm, fontSizes.xs)};
 `;
 H4.defaultProps = {
   family: 'comfort',
@@ -65,6 +79,7 @@ H4.defaultProps = {
 export const H5 = styled(Heading)`
   ${props => baseTextStyles};
   line-height: 1.5;
+  ${responsiveFonts(fontSizes.xs, fontSizes.xxs)};
 `;
 H5.defaultProps = {
   bold: true,

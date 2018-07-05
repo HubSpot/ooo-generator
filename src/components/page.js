@@ -18,6 +18,10 @@ const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
   max-width: ${props => props.maxWidth}px;
   text-align: ${props => props.textAlign};
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Shell = styled.main`
@@ -27,6 +31,7 @@ const Shell = styled.main`
   display: flex;
   margin: 0;
   min-height: 100vh;
+  padding: 20px;
 `;
 
 export class Page extends React.Component {
@@ -47,7 +52,9 @@ export class Page extends React.Component {
     const { align, children, maxWidth, textAlign, ...rest } = this.props;
     return (
       <Shell {...rest}>
-        <Main align={align} maxWidth={maxWidth} textAlign={textAlign}>{children}</Main>
+        <Main align={align} maxWidth={maxWidth} textAlign={textAlign}>
+          {children}
+        </Main>
       </Shell>
     );
   }
