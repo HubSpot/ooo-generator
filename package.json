@@ -32,11 +32,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.{md,css,js,json}'",
-    "lint": "eslint '**/*.js'",
+    "gatsby": "gatsby",
+    "prettier": "prettier",
+    "eslint": "eslint",
     "precommit": "lint-staged"
   },
   "devDependencies": {
