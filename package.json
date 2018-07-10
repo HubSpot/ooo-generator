@@ -35,7 +35,12 @@
     "gatsby": "gatsby",
     "prettier": "prettier",
     "eslint": "eslint",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lint": "eslint '**/*.js'",
+    "format": "prettier --write '**/*.{md,css,js,json}'",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
