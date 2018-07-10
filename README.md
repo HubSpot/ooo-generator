@@ -8,13 +8,13 @@ Generate Out of Office Email messages. Because taking vacation should be fun.
 
 ### Installation & Setup
 
-* Install Gatsby CLI: `npm install --global gatsby-cli`
+* Install project packages: `make install`
 
 ### Routine
 
-* Run locally: `npm run develop`
+* Run locally: `make develop`
 * Push: if you're reading this, you already have access to the repo, so PR away!
-* Deploy: `npm run deploy` after your PR is merged into `master`
+* Deploy: `make deploy` after your PR is merged into `master`
   * If anyone wants to setup CI integration or auto-deploys that is 💯
   * To learn more about this setup, checkout the [gatsby docs on using with GH pages](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/)
 
