@@ -27,15 +27,20 @@ export const ChoiceStyles = props => {
 };
 
 export const FormStyles = props => {
-  return <MuiThemeProvider {...props} theme={createMuiTheme({
-  palette: {
-    primary: {
-      main: pinkish,
-      dark: pinkish,
-    },
-    text: {
-      primary: pinkish,
-    },
-  },
-})} />;
+  return (
+    <MuiThemeProvider
+      {...props}
+      theme={createMuiTheme({
+        palette: {
+          primary: {
+            main: pinkish,
+            dark: pinkish,
+          },
+          text: {
+            primary: pinkish,
+          },
+        },
+      })}
+    />
+  );
 };

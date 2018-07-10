@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IntroPage from '../components/screens/intro';
 import FormPage from '../components/screens/form';
 import LoadingPage from '../components/screens/loading';
@@ -24,6 +25,10 @@ const IndexPage = ({ data }) => {
       <OutroPage />
     </Wrapper>
   );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.object,
 };
 
 export default IndexPage;

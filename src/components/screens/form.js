@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
 
@@ -21,14 +20,14 @@ export default class Form extends React.Component {
           You’re Ready For Vacation.<br />But Is Your Inbox?
         </H2>
         <p>
-          Whether you're going on a tropical trip or signing off for a
+          {`Whether you're going on a tropical trip or signing off for a
           staycation, you have to write an out of office message. So, why not
           write a good one? Saying you have "limited access to Wifi" isn't
-          fooling anyone. It's 2018, after all.
+          fooling anyone. It's 2018, after all.`}
         </p>
         <p>
-          Share quick details about your time away and the generator will give
-          you an 'OOO' email that's as fun as your vacation. (Well, almost.)
+          {`Share quick details about your time away and the generator will give
+          you an 'OOO' email that's as fun as your vacation. (Well, almost.)`}
         </p>
         <FormStyles>
           <form>

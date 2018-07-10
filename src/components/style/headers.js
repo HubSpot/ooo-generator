@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { Heading } from 'rebass';
-
 import * as tokens from './tokens';
 
 const fontSizes = {
@@ -40,7 +39,7 @@ const responsiveFonts = (tablet, mobile) => `
 `;
 
 export const H1 = styled(Heading)`
-  ${props => baseTextStyles};
+  ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.xl, fontSizes.lg)};
 `;
 H1.defaultProps = {
@@ -49,7 +48,7 @@ H1.defaultProps = {
 };
 
 export const H2 = styled(Heading)`
-  ${props => baseTextStyles};
+  ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.lg, fontSizes.md)};
 `;
 H2.defaultProps = {
@@ -58,7 +57,7 @@ H2.defaultProps = {
 };
 
 export const H3 = styled(Heading)`
-  ${props => baseTextStyles};
+  ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.md, fontSizes.sm)};
 `;
 H3.defaultProps = {
@@ -67,7 +66,7 @@ H3.defaultProps = {
 };
 
 export const H4 = styled(Heading)`
-  ${props => baseTextStyles};
+  ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.sm, fontSizes.xs)};
 `;
 H4.defaultProps = {
@@ -77,7 +76,7 @@ H4.defaultProps = {
 };
 
 export const H5 = styled(Heading)`
-  ${props => baseTextStyles};
+  ${() => baseTextStyles};
   line-height: 1.5;
   ${responsiveFonts(fontSizes.xs, fontSizes.xxs)};
 `;

@@ -37,6 +37,7 @@ const Shell = styled.main`
 export class Page extends React.Component {
   static propTypes = {
     align: PropTypes.oneOf(['center', 'default']),
+    children: PropTypes.node,
     plain: PropTypes.bool,
     maxWidth: PropTypes.number,
     textAlign: PropTypes.oneOf(['center', 'left']),

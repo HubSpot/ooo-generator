@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex as _Flex, Box, Heading } from 'rebass';
 import Button from '@material-ui/core/Button';
@@ -16,7 +17,7 @@ const Flex = styled(_Flex)`
   }
 `;
 
-export default ({ message, title }) => {
+const Choice = ({ message, title }) => {
   return (
     <ChoiceStyles>
       <Flex alignItems="center" mb={10}>
@@ -42,3 +43,10 @@ export default ({ message, title }) => {
     </ChoiceStyles>
   );
 };
+
+Choice.propTypes = {
+  message: PropTypes.string,
+  title: PropTypes.string,
+};
+
+export default Choice;
