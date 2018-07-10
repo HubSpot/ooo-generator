@@ -16,7 +16,7 @@ const Palms = styled.div`
   background-size: 300px auto;
 `;
 
-const IntroPage = ({ title, tagline }) => {
+const OutroPage = () => {
   return (
     <Page maxWidth={1050} plain={false} align="center" textAlign="left">
       <Flex>
@@ -32,9 +32,9 @@ const IntroPage = ({ title, tagline }) => {
             at the office.
           </H5>
           <H5 my={4}>
-            That's why HubSpot's a big fan of flexibility. Our unlimited
+            {`That's why HubSpot's a big fan of flexibility. Our unlimited
             vacation policy (and its OOO messages) is just one way we try to
-            create a flexible, inclusive culture.
+            create a flexible, inclusive culture.`}
           </H5>
           <img width="250" src={logo} />
         </Box>
@@ -43,4 +43,4 @@ const IntroPage = ({ title, tagline }) => {
   );
 };
 
-export default IntroPage;
+export default OutroPage;

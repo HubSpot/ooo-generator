@@ -1,0 +1,8 @@
+{
+  "*.js": [
+    "eslint"
+  ],
+  "**/*.{md,css,js,json}": [
+    "prettier -l"
+  ]
+}

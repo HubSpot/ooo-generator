@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { H1, H4 } from '../style/headers';
@@ -11,10 +12,17 @@ const Tagline = styled(H4)`
 const IntroPage = ({ title, tagline }) => {
   return (
     <Page align="center" plain={false}>
-      <H1 mb={5} size="xxl">{title}</H1>
+      <H1 mb={5} size="xxl">
+        {title}
+      </H1>
       <Tagline>{tagline}</Tagline>
     </Page>
   );
+};
+
+IntroPage.propTypes = {
+  title: PropTypes.node,
+  tagline: PropTypes.node,
 };
 
 export default IntroPage;

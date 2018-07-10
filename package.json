@@ -4,12 +4,16 @@
   "description": "Out of Office Email Generator",
   "version": "1.0.0",
   "author": "Ben Anderson <banderson@hubspot.com>",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "dependencies": {
     "@material-ui/core": "^1.2.0",
-    "gatsby": "^1.9.247",
+    "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-styled-components": "^2.0.11",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dates": "^16.7.0",
     "react-dom": "^16.4.1",
@@ -18,8 +22,9 @@
     "styled-components": "^3.3.0"
   },
   "keywords": [
-    "OOO",
+    "ooo",
     "vacation",
+    "out-of-office",
     "email",
     "generator",
     "fun",
@@ -27,13 +32,24 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public",
+    "gatsby": "gatsby",
+    "prettier": "prettier",
+    "eslint": "eslint",
+    "precommit": "lint-staged",
+    "lint": "eslint '**/*.js'",
+    "format": "prettier --write '**/*.{md,css,js,json}'",
     "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'"
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-react": "^7.10.0",
+    "gh-pages": "^1.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.12.0"
   }
 }
