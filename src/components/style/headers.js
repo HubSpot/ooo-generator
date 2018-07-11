@@ -43,8 +43,8 @@ export const H1 = styled(Heading)`
   ${responsiveFonts(fontSizes.xl, fontSizes.lg)};
 `;
 H1.defaultProps = {
-  upper: true,
   size: fontSizes.xl,
+  upper: 'true',
 };
 
 export const H2 = styled(Heading)`
@@ -52,8 +52,8 @@ export const H2 = styled(Heading)`
   ${responsiveFonts(fontSizes.lg, fontSizes.md)};
 `;
 H2.defaultProps = {
-  upper: true,
   size: 'lg',
+  upper: 'true',
 };
 
 export const H3 = styled(Heading)`
@@ -62,7 +62,7 @@ export const H3 = styled(Heading)`
 `;
 H3.defaultProps = {
   size: 'md',
-  upper: true,
+  upper: 'true',
 };
 
 export const H4 = styled(Heading)`
@@ -72,7 +72,7 @@ export const H4 = styled(Heading)`
 H4.defaultProps = {
   family: 'comfort',
   size: 'sm',
-  upper: true,
+  upper: 'true',
 };
 
 export const H5 = styled(Heading)`
@@ -81,7 +81,7 @@ export const H5 = styled(Heading)`
   ${responsiveFonts(fontSizes.xs, fontSizes.xxs)};
 `;
 H5.defaultProps = {
-  bold: true,
+  bold: 'true',
   family: 'comfort',
   size: 'xs',
 };
