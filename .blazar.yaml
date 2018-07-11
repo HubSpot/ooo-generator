@@ -1,0 +1,27 @@
+steps:
+  - description: make devtoolset-exec
+    commands:
+      - echo "#!/bin/bash -e" > $DEVTOOLSET_EXEC
+      - echo "source /opt/rh/devtoolset-4/enable" >> $DEVTOOLSET_EXEC
+      - echo '$@' >> $DEVTOOLSET_EXEC
+      - chmod +x $DEVTOOLSET_EXEC
+  - description: npm install
+    commands:
+      - mkdir /usr/share/hubspot/build/.local
+      - echo "NODE VERSION" $NODE_VERSION
+      - echo "export NODE_DIR=\${NODE_DIR:-\"/opt/build-deps/node-$NODE_VERSION\"}" >> $BUILD_COMMAND_RC_FILE
+      - echo "export PATH=\"$NODE_DIR/bin:$PATH\"" >> $BUILD_COMMAND_RC_FILE
+      - $DEVTOOLSET_EXEC $NODE_DIR/bin/node $NODE_DIR/bin/npm install
+  - description: gatsby build
+    name: build
+    commands:
+      - $DEVTOOLSET_EXEC $NODE_DIR/bin/node $NODE_DIR/bin/npm run gatsby -- build
+  - description: deploy to github pages
+    name: deploy
+    activeByDefault: false
+    commands:
+      - $DEVTOOLSET_EXEC $NODE_DIR/bin/node $NODE_DIR/bin/npm run gh-pages -- -d "public"
+
+stepActivation:
+  deploy:
+    branches: ['master']
