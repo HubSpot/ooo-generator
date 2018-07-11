@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import '../styles/index.css';
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.desc },
-        { name: 'keywords', content: data.site.siteMetadata.keywords },
-        { name: 'viewport', content: 'width=device-width' },
-      ]}
-    />
-    <main>{children()}</main>
-  </div>
-);
+class Layout extends Component {
+  static propTypes = {
+    children: PropTypes.func,
+    data: PropTypes.object,
+  };
 
-Layout.propTypes = {
-  children: PropTypes.func,
-  data: PropTypes.object,
-};
+  componentDidMount() {
+    smoothscroll.polyfill();
+  }
+
+  render() {
+    const { children, data } = this.props;
+    return (
+      <div>
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: data.site.siteMetadata.desc },
+            { name: 'keywords', content: data.site.siteMetadata.keywords },
+            { name: 'viewport', content: 'width=device-width' },
+          ]}
+        />
+        <main>{children()}</main>
+      </div>
+    );
+  }
+}
 
 export default Layout;
 

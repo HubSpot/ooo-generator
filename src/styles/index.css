@@ -9,6 +9,10 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Comfortaa';
   line-height: 1.5;
