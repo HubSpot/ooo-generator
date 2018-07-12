@@ -35,9 +35,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "gatsby": "gatsby",
-    "prettier": "prettier",
     "eslint": "eslint",
+    "gatsby": "gatsby",
+    "gh-pages": "gh-pages",
+    "prettier": "prettier",
     "precommit": "lint-staged",
     "lint": "eslint '**/*.js'",
     "format": "prettier --write '**/*.{md,css,js,json}'",
