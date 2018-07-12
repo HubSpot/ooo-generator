@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 
 const Fade = styled.span`
   opacity: 0;
