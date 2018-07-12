@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^1.2.0",
+    "clipboard": "^2.0.1",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
