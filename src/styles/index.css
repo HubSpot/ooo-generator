@@ -1,11 +1,16 @@
 @import './normalize.css';
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 @font-face {
   font-family: 'peace_sansregular';
   src: url('./fonts/peace.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Heading } from 'rebass';
+import omitProps from '../hoc/omitProps';
 import * as tokens from './tokens';
 
 const fontSizes = {
@@ -18,14 +19,12 @@ const fontFamilies = {
 };
 
 const baseTextStyles = css`
-  font-family: ${props => fontFamilies[props.family] || fontFamilies.peace};
-  font-size: ${props =>
-    typeof props.size === 'number'
-      ? `${props.size}px`
-      : `${fontSizes[props.size]}px`};
-  font-weight: ${props => (props.bold ? 'bold' : 'normal')};
-  color: ${props => tokens[props.color] || props.color};
-  text-transform: ${props => (props.upper ? 'uppercase' : 'none')};
+  color: ${({ color }) => tokens[color] || color};
+  font-family: ${({ family }) => fontFamilies[family] || fontFamilies.peace};
+  font-size: ${({ size }) =>
+    typeof size === 'number' ? `${size}px` : `${fontSizes[size]}px`};
+  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
+  text-transform: ${({ upper }) => (upper ? 'uppercase' : 'none')};
 `;
 
 const responsiveFonts = (tablet, mobile) => `
@@ -38,50 +37,47 @@ const responsiveFonts = (tablet, mobile) => `
   }
 `;
 
-export const H1 = styled(Heading)`
+const Base = omitProps(['bold', 'family', 'size', 'upper'])(Heading);
+
+export const H1 = styled(Base).attrs({
+  size: ({ size = fontSizes.xl }) => size,
+  upper: ({ upper = true }) => upper,
+})`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.xl, fontSizes.lg)};
 `;
-H1.defaultProps = {
-  upper: true,
-  size: fontSizes.xl,
-};
 
-export const H2 = styled(Heading)`
+export const H2 = styled(Base).attrs({
+  size: ({ size = fontSizes.lg }) => size,
+  upper: ({ upper = true }) => upper,
+})`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.lg, fontSizes.md)};
 `;
-H2.defaultProps = {
-  upper: true,
-  size: 'lg',
-};
 
-export const H3 = styled(Heading)`
+export const H3 = styled(Base).attrs({
+  size: ({ size = fontSizes.md }) => size,
+  upper: ({ upper = true }) => upper,
+})`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.md, fontSizes.sm)};
 `;
-H3.defaultProps = {
-  size: 'md',
-  upper: true,
-};
 
-export const H4 = styled(Heading)`
+export const H4 = styled(Base).attrs({
+  family: ({ family = 'comfort' }) => family,
+  size: ({ size = fontSizes.sm }) => size,
+  upper: ({ upper = true }) => upper,
+})`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.sm, fontSizes.xs)};
 `;
-H4.defaultProps = {
-  family: 'comfort',
-  size: 'sm',
-  upper: true,
-};
 
-export const H5 = styled(Heading)`
+export const H5 = styled(Base).attrs({
+  bold: ({ bold = true }) => bold,
+  family: ({ family = 'comfort' }) => family,
+  size: ({ size = fontSizes.sm }) => size,
+})`
   ${() => baseTextStyles};
   line-height: 1.5;
   ${responsiveFonts(fontSizes.xs, fontSizes.xxs)};
 `;
-H5.defaultProps = {
-  bold: true,
-  family: 'comfort',
-  size: 'xs',
-};

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { H1, H4 } from '../style/headers';
 import Page from '../page';
+import Affordance from '../affordance';
 
 const Tagline = styled(H4)`
   letter-spacing: 3px;
@@ -16,6 +17,7 @@ const IntroPage = ({ title, tagline }) => {
         {title}
       </H1>
       <Tagline>{tagline}</Tagline>
+      <Affordance />
     </Page>
   );
 };
