@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box, Heading } from 'rebass';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 import Clipboard from 'clipboard';
 
 import { ChoiceStyles } from './style/themes';
@@ -26,6 +27,10 @@ class Choice extends Component {
     super();
     this.ref = React.createRef();
     this.clipboard = null;
+
+    this.state = {
+      timer: null,
+    };
   }
 
   componentDidMount() {
@@ -35,14 +40,29 @@ class Choice extends Component {
     this.clipboard = new Clipboard($btn, {
       text: () => withWatermark(message),
     });
+
+    this.clipboard.on('success', this.createTimer);
   }
 
   componentWillUnmount() {
     this.clipboard.destroy();
   }
 
+  createTimer = () => {
+    const { timer } = this.state;
+    clearTimeout(timer);
+    this.setState({
+      timer: setTimeout(() => {
+        this.setState({
+          timer: null,
+        });
+      }, 2500),
+    });
+  };
+
   render() {
     const { message, title } = this.props;
+    const { timer } = this.state;
 
     return (
       <ChoiceStyles>
@@ -55,15 +75,17 @@ class Choice extends Component {
           </Box>
           <Box pl={4} width={1 / 5}>
             <Flex flexDirection="column">
-              <Button
-                buttonRef={$btn => (this.ref.current = $btn)}
-                color="primary"
-                disableRipple
-                size="large"
-                variant="contained"
-              >
-                Copy
-              </Button>
+              <Tooltip open={timer != null} placement="top" title="Copied!">
+                <Button
+                  buttonRef={$btn => (this.ref.current = $btn)}
+                  color="primary"
+                  disableRipple
+                  size="large"
+                  variant="contained"
+                >
+                  Copy
+                </Button>
+              </Tooltip>
             </Flex>
           </Box>
         </StyledFlex>
