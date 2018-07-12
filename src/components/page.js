@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import overlay from '../images/background-overlay.png';
 
-import { blackish, pinkish, whiteish } from './style/tokens';
+import { blackish, pinkish, pinkishWithOpacity, whiteish } from './style/tokens';
 
 const backgrounds = {
   festive: pinkish,
@@ -13,6 +14,9 @@ const textColors = {
   festive: whiteish,
   plain: blackish,
 };
+
+const backgroundOverlay = `linear-gradient(${pinkishWithOpacity} 0%,
+  ${pinkishWithOpacity} 100%), url(${overlay})`;
 
 const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
@@ -27,6 +31,7 @@ const Main = styled.main`
 const Shell = styled.main`
   background-color: ${props =>
     props.plain ? backgrounds.plain : backgrounds.festive};
+  background-image: ${props => !props.plain && backgroundOverlay};
   color: ${props => (props.plain ? textColors.plain : textColors.festive)};
   display: flex;
   margin: 0;
