@@ -1,16 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import sampleSize from 'lodash/fp/sampleSize';
 
 import Page from '../page';
 import Choice from '../choice';
 import { H1, H5 } from '../style/headers';
 
 export default class Choices extends React.Component {
+  static propTypes = {
+    templates: PropTypes.arrayOf(PropTypes.string),
+  };
+
+  static defaultProps = {
+    templates: [],
+  };
+
   state = {
     startDate: null,
     endDate: null,
   };
 
   render() {
+    const { templates } = this.props;
+    const [first, second] = sampleSize(2)(templates);
+
     return (
       <Page align="center" textAlign="left">
         <H1 color="pinkish">OOO Messages</H1>
@@ -19,14 +32,8 @@ export default class Choices extends React.Component {
           Copy it to your clipboard and paste it into your email settings.<br />
           {"Then get out of here. It's vacation time!"}
         </H5>
-        <Choice
-          title="Message #1"
-          message="Bits of moving fluff dream of the mind's eye kindling the energy hidden in matter. Drake Equation billions upon billions made in the interiors of collapsing stars courage of our questions stirred by starlight, rogue Hypatia not a sunrise but a galaxyrise. Realm of the galaxies, paroxysm of global death Euclid."
-        />
-        <Choice
-          title="Message #2"
-          message="Cambrian explosion made in the interiors of collapsing stars light years, astonishment Drake Equation cosmic ocean, trillion culture, colonies, at the edge of forever. Hundreds of thousands laws of physics! Stirred by starlight. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit dispassionate extraterrestrial observer consciousness realm of the galaxies courage of our questions and billions upon billions upon billions upon billions upon billions upon billions upon billions."
-        />
+        <Choice title="Message #1" message={first} />
+        <Choice title="Message #2" message={second} />
       </Page>
     );
   }
