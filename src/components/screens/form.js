@@ -10,13 +10,9 @@ import Page from '../page';
 
 export default class Form extends React.Component {
   propTypes = {
+    formData: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
-  };
-
-  state = {
-    startDate: null,
-    endDate: null,
   };
 
   render() {
@@ -43,8 +39,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="First name"
-                  id="first"
-                  name="first"
+                  id="firstName"
+                  name="firstName"
+                  onChange={e => this.props.handleChange(e, 'firstName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -52,8 +49,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Last name"
-                  id="last"
-                  name="last"
+                  id="lastName"
+                  name="lastName"
+                  onChange={e => this.props.handleChange(e, 'lastName')}
                 />
               </Box>
             </Flex>
@@ -65,6 +63,7 @@ export default class Form extends React.Component {
                   label="Vacation start date"
                   id="startDate"
                   name="startDate"
+                  onChange={e => this.props.handleChange(e, 'startDate')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -74,6 +73,7 @@ export default class Form extends React.Component {
                   label="End date"
                   id="returnDate"
                   name="returnDate"
+                  onChange={e => this.props.handleChange(e, 'returnDate')}
                 />
               </Box>
             </Flex>
@@ -85,6 +85,7 @@ export default class Form extends React.Component {
                   label="Destination"
                   id="destination"
                   name="destination"
+                  onChange={e => this.props.handleChange(e, 'destination')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -94,6 +95,7 @@ export default class Form extends React.Component {
                   label="Activity"
                   id="activity"
                   name="activity"
+                  onChange={e => this.props.handleChange(e, 'activity')}
                 />
               </Box>
             </Flex>
@@ -103,8 +105,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Name"
-                  id="emergencyName"
-                  name="emergencyName"
+                  id="emergencyContactName"
+                  name="emergencyContactName"
+                  onChange={e => this.props.handleChange(e, 'emergencyContactName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -112,8 +115,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Email"
-                  id="emergencyEmail"
-                  name="emergencyEmail"
+                  id="emergencyContactEmail"
+                  name="emergencyContactEmail"
+                  onChange={e => this.props.handleChange(e, 'emergencyContactEmail')}
                 />
               </Box>
             </Flex>

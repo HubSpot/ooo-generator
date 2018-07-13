@@ -16,41 +16,45 @@ export default class Generator extends React.Component {
   state = {
     step: 0,
     formData: {
-      firstName: 'Bender',
-      lastName: 'Rodriguez',
-      startDate: 'January 1, 2018',
-      returnDate: 'December 31, 2018',
-      destination: 'Omicron Persei 8',
-      activity: 'Build my own theme park',
-      emergencyContactName: 'Flexo',
-      emergencyContactEmail: '000-000-0000',
-    }
+      firstName: '',
+      lastName: '',
+      startDate: '',
+      returnDate: '',
+      destination: '',
+      activity: '',
+      emergencyContactName: '',
+      emergencyContactEmail: '',
+    },
   };
 
   constructor(props) {
     super(props);
     const templates = extractTemplates(props.data);
+    const { formData } = this.state;
 
     this.components = [
       {
         component: Form,
         props: {
-          onSubmit: this.nextStep,
           handleChange: this.handleChange,
+          onSubmit: this.nextStep,
         },
       },
       {
         component: Loading,
         props: { timeout: 2000, onNextStep: this.nextStep },
       },
-      { component: Choices, props: { templates, metadata: this.state.formData } },
+      { component: Choices, props: { templates, metadata: formData } },
     ];
   }
 
-  handleChange = e => {
-    this.setState({
-      field: e.target.value,
-    });
+  handleChange = ({ target: { value } }, field) => {
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        [field] : value,
+      }
+    }));
   };
 
   nextStep = () => {
