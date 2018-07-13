@@ -20,6 +20,7 @@
     "react-dates": "^16.7.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "react-spinner": "^0.2.7",
     "rebass": "^2.0.0-2",
     "recompose": "^0.27.1",
     "smoothscroll-polyfill": "^0.4.3",
