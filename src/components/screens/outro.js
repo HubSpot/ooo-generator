@@ -1,28 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 
 import Page from '../page';
 import { H1, H5 } from '../style/headers';
-import palm from '../../images/palmtree.png';
 import logo from '../../images/hubspotlogo-web-white.png';
-
-const Palms = styled.div`
-  opacity: 0.2;
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  background-image: url(${palm});
-  background-size: 300px auto;
-`;
 
 const OutroPage = () => {
   return (
     <Page maxWidth={1050} plain={false} align="center" textAlign="left">
       <Flex>
-        <Box width={0} style={{ position: 'relative' }}>
-          <Palms />
-        </Box>
         <Box width={750} align="center">
           <H1 my={4}>There’s Lots to Love About Vacation.</H1>
           <H5 my={4}>
