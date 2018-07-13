@@ -10,12 +10,13 @@ import Page from '../page';
 
 export default class Form extends React.Component {
   propTypes = {
-    formData: PropTypes.object.isRequired,
     handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
   };
 
   render() {
+    const { handleChange, onSubmit } = this.props;
+
     return (
       <Page align="center">
         <H2 mb={4}>
@@ -41,7 +42,7 @@ export default class Form extends React.Component {
                   label="First name"
                   id="firstName"
                   name="firstName"
-                  onChange={e => this.props.handleChange(e, 'firstName')}
+                  onChange={e => handleChange(e, 'firstName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -51,7 +52,7 @@ export default class Form extends React.Component {
                   label="Last name"
                   id="lastName"
                   name="lastName"
-                  onChange={e => this.props.handleChange(e, 'lastName')}
+                  onChange={e => handleChange(e, 'lastName')}
                 />
               </Box>
             </Flex>
@@ -63,7 +64,7 @@ export default class Form extends React.Component {
                   label="Vacation start date"
                   id="startDate"
                   name="startDate"
-                  onChange={e => this.props.handleChange(e, 'startDate')}
+                  onChange={e => handleChange(e, 'startDate')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -73,7 +74,7 @@ export default class Form extends React.Component {
                   label="End date"
                   id="returnDate"
                   name="returnDate"
-                  onChange={e => this.props.handleChange(e, 'returnDate')}
+                  onChange={e => handleChange(e, 'returnDate')}
                 />
               </Box>
             </Flex>
@@ -85,7 +86,7 @@ export default class Form extends React.Component {
                   label="Destination"
                   id="destination"
                   name="destination"
-                  onChange={e => this.props.handleChange(e, 'destination')}
+                  onChange={e => handleChange(e, 'destination')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -95,7 +96,7 @@ export default class Form extends React.Component {
                   label="Activity"
                   id="activity"
                   name="activity"
-                  onChange={e => this.props.handleChange(e, 'activity')}
+                  onChange={e => handleChange(e, 'activity')}
                 />
               </Box>
             </Flex>
@@ -107,7 +108,7 @@ export default class Form extends React.Component {
                   label="Emergency Contact Name"
                   id="emergencyContactName"
                   name="emergencyContactName"
-                  onChange={e => this.props.handleChange(e, 'emergencyContactName')}
+                  onChange={e => handleChange(e, 'emergencyContactName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -117,11 +118,11 @@ export default class Form extends React.Component {
                   label="Emergency Contact Email"
                   id="emergencyContactEmail"
                   name="emergencyContactEmail"
-                  onChange={e => this.props.handleChange(e, 'emergencyContactEmail')}
+                  onChange={e => handleChange(e, 'emergencyContactEmail')}
                 />
               </Box>
             </Flex>
-            <button onClick={this.props.onSubmit}>Submit</button>
+            <button onClick={onSubmit}>Submit</button>
           </form>
         </FormStyles>
       </Page>
