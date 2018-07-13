@@ -5,5 +5,16 @@ module.exports = {
     keywords: 'OOO vacation email generator fun hubspot',
     tagline: 'Because taking vacation should be fun.',
   },
-  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'templates',
+        path: `${__dirname}/templates`,
+      },
+    },
+    'gatsby-transformer-remark',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+  ],
 };
