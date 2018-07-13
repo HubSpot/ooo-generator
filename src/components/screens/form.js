@@ -58,20 +58,22 @@ export default class Form extends React.Component {
               </Box>
             </Flex>
             <Flex justify="center">
-              <Box px={3} pt={4} width={2 / 3}>
-                <DateRangePicker
-                  startDate={this.state.startDate}
-                  startDateId="date-start"
-                  endDate={this.state.endDate}
-                  endDateId="date-end"
-                  onDatesChange={({ startDate, endDate }) =>
-                    this.setState({ startDate, endDate })
-                  }
-                  focusedInput={this.state.focusedInput}
-                  onFocusChange={focusedInput =>
-                    this.setState({ focusedInput })
-                  }
-                  showClearDates={true}
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Vacation start date"
+                  id="startDate"
+                  name="startDate"
+                />
+              </Box>
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="End date"
+                  id="returnDate"
+                  name="returnDate"
                 />
               </Box>
             </Flex>

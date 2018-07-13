@@ -39,7 +39,6 @@ Generate Out of Office Email messages. Because taking vacation should be fun.
 * [Styled Components](https://www.styled-components.com/docs/api)
 * [Material UI](https://material-ui.com/)
 * [Rebass](http://jxnblk.com/rebass/components/Heading)
-* [react-dates](https://github.com/airbnb/react-dates)
 * [styled-system](https://github.com/jxnblk/styled-system/blob/master/docs/api.md#default-theme) spacing helpers (e.g. `my={4}`)
 
 ### Fonts used
