@@ -61,6 +61,11 @@ export default class Generator extends React.Component {
     this.setState(prev => ({
       step: Math.min(this.components.length - 1, prev.step + 1),
     }));
+
+    this.components[2].props = {
+      ...this.components[2].props,
+      metadata: this.state.formData
+    };
   };
 
   render() {
