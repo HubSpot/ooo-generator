@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import map from 'lodash/fp/map';
+import compose from 'lodash/fp/compose';
 import sampleSize from 'lodash/fp/sampleSize';
 
 import { MetadataPropTypes, interpolate } from '../../lib/templating';
@@ -25,7 +27,10 @@ export default class Choices extends React.Component {
 
   render() {
     const { metadata, templates } = this.props;
-    const [first, second] = sampleSize(2)(templates);
+    const [first, second] = compose(
+      map(interpolate(metadata)),
+      sampleSize(2)
+    )(templates);
 
     return (
       <Page align="center" textAlign="left">
@@ -35,8 +40,8 @@ export default class Choices extends React.Component {
           Copy it to your clipboard and paste it into your email settings.<br />
           {"Then get out of here. It's vacation time!"}
         </H5>
-        <Choice title="Message #1" message={interpolate(first, metadata)} />
-        <Choice title="Message #2" message={interpolate(second, metadata)} />
+        <Choice title="Message #1" message={first} />
+        <Choice title="Message #2" message={second} />
       </Page>
     );
   }
