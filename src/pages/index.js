@@ -7,6 +7,17 @@ import ChoicesPage from '../components/screens/choices';
 import OutroPage from '../components/screens/outro';
 import styled from 'styled-components';
 
+const __metadata__ = {
+  firstName: 'Bender',
+  lastName: 'Rodriguez',
+  startDate: 'January 1, 2018',
+  returnDate: 'December 31, 2018',
+  destination: 'Omicron Persei 8',
+  activity: 'Build my own theme park',
+  emergencyContactName: 'Flexo',
+  emergencyContactEmail: '000-000-0000',
+};
+
 const extractSiteMetadata = ({ site: { siteMetadata } }) => siteMetadata;
 
 const extractTemplates = ({ allMarkdownRemark: { edges } }) =>
@@ -25,7 +36,7 @@ const IndexPage = ({ data }) => {
       <IntroPage tagline={tagline} title={title} />
       <FormPage />
       <LoadingPage />
-      <ChoicesPage templates={templates} />
+      <ChoicesPage metadata={__metadata__} templates={templates} />
       <OutroPage />
     </Wrapper>
   );
