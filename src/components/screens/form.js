@@ -3,11 +3,22 @@ import PropTypes from 'prop-types';
 
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
+import _Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
 import { DateRangePicker } from '../date-range-picker';
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
+
+const Button = styled(_Button)`
+  margin-top: 20px !important;
+  text-transform: uppercase;
+
+  && span {
+    color: white;
+  }
+`;
 
 export default class Form extends React.Component {
   propTypes = {
@@ -115,7 +126,15 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <button onClick={this.props.onSubmit}>Submit</button>
+            <Button
+              color="primary"
+              disableRipple
+              size="large"
+              variant="contained"
+              onClick={this.props.onSubmit}
+            >
+              Submit
+            </Button>
           </form>
         </FormStyles>
       </Page>
