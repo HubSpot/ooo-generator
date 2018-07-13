@@ -10,7 +10,7 @@ import { H2 } from '../style/headers';
 import Page from '../page';
 
 export default class Form extends React.Component {
-  propTypes = {
+  static propTypes = {
     onSubmit: PropTypes.func,
   };
 
