@@ -7,21 +7,25 @@ import ChoicesPage from '../components/screens/choices';
 import OutroPage from '../components/screens/outro';
 import styled from 'styled-components';
 
+const extractSiteMetadata = ({ site: { siteMetadata } }) => siteMetadata;
+
+const extractTemplates = ({ allMarkdownRemark: { edges } }) =>
+  edges.map(({ node: { rawMarkdownBody } }) => rawMarkdownBody);
+
 const Wrapper = styled.div`
   position: relative;
 `;
 
 const IndexPage = ({ data }) => {
-  const { site } = data;
+  const { title, tagline } = extractSiteMetadata(data);
+  const templates = extractTemplates(data);
+
   return (
     <Wrapper>
-      <IntroPage
-        tagline={site.siteMetadata.tagline}
-        title={site.siteMetadata.title}
-      />
+      <IntroPage tagline={tagline} title={title} />
       <FormPage />
       <LoadingPage />
-      <ChoicesPage />
+      <ChoicesPage templates={templates} />
       <OutroPage />
     </Wrapper>
   );
@@ -36,10 +40,16 @@ export default IndexPage;
 export const query = graphql`
   query SiteMeta {
     site {
-      id
       siteMetadata {
         title
         tagline
+      }
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          rawMarkdownBody
+        }
       }
     }
   }
