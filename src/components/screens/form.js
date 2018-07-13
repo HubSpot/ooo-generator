@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
 
-import { DateRangePicker } from '../date-range-picker';
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 
 export default class Form extends React.Component {
   propTypes = {
+    handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
   };
 

@@ -5,17 +5,6 @@ import Form from './form';
 import Loading from './loading';
 import Choices from './choices';
 
-const __metadata__ = {
-  firstName: 'Bender',
-  lastName: 'Rodriguez',
-  startDate: 'January 1, 2018',
-  returnDate: 'December 31, 2018',
-  destination: 'Omicron Persei 8',
-  activity: 'Build my own theme park',
-  emergencyContactName: 'Flexo',
-  emergencyContactEmail: '000-000-0000',
-};
-
 const extractTemplates = ({ allMarkdownRemark: { edges } }) =>
   edges.map(({ node: { rawMarkdownBody } }) => rawMarkdownBody);
 
@@ -26,6 +15,16 @@ export default class Generator extends React.Component {
 
   state = {
     step: 0,
+    formData: {
+      firstName: 'Bender',
+      lastName: 'Rodriguez',
+      startDate: 'January 1, 2018',
+      returnDate: 'December 31, 2018',
+      destination: 'Omicron Persei 8',
+      activity: 'Build my own theme park',
+      emergencyContactName: 'Flexo',
+      emergencyContactEmail: '000-000-0000',
+    }
   };
 
   constructor(props) {
@@ -37,15 +36,22 @@ export default class Generator extends React.Component {
         component: Form,
         props: {
           onSubmit: this.nextStep,
+          handleChange: this.handleChange,
         },
       },
       {
         component: Loading,
         props: { timeout: 2000, onNextStep: this.nextStep },
       },
-      { component: Choices, props: { templates, metadata: __metadata__ } },
+      { component: Choices, props: { templates, metadata: this.state.formData } },
     ];
   }
+
+  handleChange = e => {
+    this.setState({
+      field: e.target.value,
+    });
+  };
 
   nextStep = () => {
     this.setState(prev => ({
