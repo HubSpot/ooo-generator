@@ -5,6 +5,8 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 import '../styles/index.css';
 
+const GA_TRACKING_ID = 'UA-122348985-1';
+
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.func,
@@ -26,7 +28,20 @@ class Layout extends Component {
             { name: 'keywords', content: data.site.siteMetadata.keywords },
             { name: 'viewport', content: 'width=device-width' },
           ]}
-        />
+        >
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
+            `}
+          </script>
+        </Helmet>
         <main>{children()}</main>
       </div>
     );
