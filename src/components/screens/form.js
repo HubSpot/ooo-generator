@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
 
@@ -8,6 +10,10 @@ import { H2 } from '../style/headers';
 import Page from '../page';
 
 export default class Form extends React.Component {
+  propTypes = {
+    onSubmit: PropTypes.func,
+  };
+
   state = {
     startDate: null,
     endDate: null,
@@ -69,6 +75,7 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
+            <button onClick={this.props.onSubmit}>Submit</button>
           </form>
         </FormStyles>
       </Page>
