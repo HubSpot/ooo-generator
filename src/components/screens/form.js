@@ -75,6 +75,46 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
+            <Flex justify="center">
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Destination"
+                  id="destination"
+                  name="destination"
+                />
+              </Box>
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Activity"
+                  id="activity"
+                  name="activity"
+                />
+              </Box>
+            </Flex>
+            <Flex justify="center">
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Emergency Contact Name"
+                  id="emergencyName"
+                  name="emergencyName"
+                />
+              </Box>
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Emergency Contact Email"
+                  id="emergencyEmail"
+                  name="emergencyEmail"
+                />
+              </Box>
+            </Flex>
             <button onClick={this.props.onSubmit}>Submit</button>
           </form>
         </FormStyles>
