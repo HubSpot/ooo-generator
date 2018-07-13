@@ -1,1 +1,8 @@
-.gitignore
+# Project dependencies
+.cache
+node_modules
+package-lock.json
+/templates
+
+# Build directory
+/public
