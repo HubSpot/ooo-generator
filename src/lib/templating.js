@@ -21,7 +21,7 @@ export const MetadataPropTypes = PropTypes.shape(
   )
 );
 
-export const interpolate = (template, metadata) =>
+export const interpolate = metadata => template =>
   Object.keys(Fields).reduce(
     (interpolated, field) =>
       Object.prototype.hasOwnProperty.call(metadata, field)
