@@ -82,7 +82,7 @@ export default class Form extends React.Component {
                 <TextField
                   style={{ width: '100%' }}
                   required
-                  label="End date"
+                  label="Vacation end date"
                   id="returnDate"
                   name="returnDate"
                   onChange={e => handleChange(e, 'returnDate')}
