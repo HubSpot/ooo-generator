@@ -21,7 +21,7 @@ const Button = styled(_Button)`
 `;
 
 export default class Form extends React.Component {
-  propTypes = {
+  static propTypes = {
     onSubmit: PropTypes.func,
   };
 
