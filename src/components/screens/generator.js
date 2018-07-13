@@ -9,7 +9,7 @@ const extractTemplates = ({ allMarkdownRemark: { edges } }) =>
   edges.map(({ node: { rawMarkdownBody } }) => rawMarkdownBody);
 
 export default class Generator extends React.Component {
-  propTypes = {
+  static propTypes = {
     data: PropTypes.object,
   };
 

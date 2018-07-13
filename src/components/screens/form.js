@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
+import _Button from '@material-ui/core/Button';
+import styled from 'styled-components';
 
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 
+const Button = styled(_Button)`
+  margin-top: 20px !important;
+  text-transform: uppercase;
+
+  && span {
+    color: white;
+  }
+`;
+
 export default class Form extends React.Component {
-  propTypes = {
+  static propTypes = {
     handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
   };
@@ -122,7 +133,15 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <button onClick={onSubmit}>Submit</button>
+            <Button
+              color="primary"
+              disableRipple
+              size="large"
+              variant="contained"
+              onClick={onSubmit}
+            >
+              Submit
+            </Button>
           </form>
         </FormStyles>
       </Page>
