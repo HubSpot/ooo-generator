@@ -6,10 +6,14 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Clipboard from 'clipboard';
 
+import { pinkish } from './style/tokens';
 import { ChoiceStyles } from './style/themes';
 
 const Blurb = styled.p`
   margin-top: 8px;
+  white-space: pre-wrap;
+  border-left 0.2rem solid ${pinkish};
+  padding-left: 1.0rem;
 `;
 
 const StyledFlex = styled(Flex)`
@@ -68,7 +72,7 @@ class Choice extends Component {
       <ChoiceStyles>
         <StyledFlex alignItems="center" mb={10}>
           <Box width={4 / 5}>
-            <Heading fontSize={28} mt={3}>
+            <Heading fontSize={24} mt={3}>
               {title}
             </Heading>
             <Blurb>{message}</Blurb>

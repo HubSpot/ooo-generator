@@ -5,12 +5,12 @@ import * as tokens from './tokens';
 
 const fontSizes = {
   xxl: 82,
-  xl: 72,
-  lg: 48,
-  md: 40,
+  xl: 60,
+  lg: 42,
+  md: 36,
   sm: 24,
-  xs: 22,
-  xxs: 18,
+  xs: 20,
+  xxs: 16,
 };
 
 const fontFamilies = {
