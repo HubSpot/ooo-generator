@@ -24,6 +24,16 @@ const BouncingIcon = styled(Icon).attrs({
     left: 50%;
     margin-left: ${({ size }) => `-${size / 2}px`};
     position: fixed;
+
+    @media (max-width: 768px) {
+      font-size: ${({ size }) => `${size * 0.8}px`};
+      margin-left: ${({ size }) => `-${(size * 0.8) / 2}px`};
+    }
+
+    @media (max-width: 480px) {
+      font-size: ${({ size }) => `${size * 0.6}px`};
+      margin-left: ${({ size }) => `-${(size * 0.6) / 2}px`};
+    }
   }
 `;
 
