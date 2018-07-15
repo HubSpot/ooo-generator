@@ -29,6 +29,7 @@ class Layout extends Component {
             { name: 'viewport', content: 'width=device-width' },
           ]}
         >
+          <link rel="shortcut icon" href="/favicon.ico" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
