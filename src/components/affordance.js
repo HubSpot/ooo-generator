@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import Icon from '@material-ui/core/Icon';
 import debounce from 'lodash/debounce';
+import { whiteish, pinkish } from './style/tokens';
 
 const bounce = keyframes`
   0%, 100% {
@@ -20,6 +21,7 @@ const BouncingIcon = styled(Icon).attrs({
   && {
     animation: ${bounce} 2s ease-in-out infinite;
     bottom: 0;
+    color: ${({ color }) => (color === 'primary' ? whiteish : pinkish)};
     font-size: ${({ size }) => `${size}px`};
     left: 50%;
     margin-left: ${({ size }) => `-${size / 2}px`};
@@ -44,13 +46,17 @@ const Fade = styled.span`
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 `;
 
+const isVisible = (threshold, buffer = 50) =>
+  threshold != null && Math.abs(window.pageYOffset - threshold) < buffer;
+
 export default class Affordance extends Component {
   static propTypes = {
-    threshold: PropTypes.number.isRequired,
+    color: PropTypes.oneOf(['primary', 'secondary']),
+    threshold: PropTypes.number,
   };
 
   static defaultProps = {
-    threshold: 50,
+    color: 'primary',
   };
 
   state = {
@@ -62,7 +68,7 @@ export default class Affordance extends Component {
     setTimeout(() => {
       const { threshold } = this.props;
       this.setState({
-        visible: window.pageYOffset - threshold < 0,
+        visible: isVisible(threshold),
       });
     });
   }
@@ -74,7 +80,7 @@ export default class Affordance extends Component {
   handleScroll = debounce(() => {
     const { threshold } = this.props;
     this.setState({
-      visible: window.pageYOffset - threshold < 0,
+      visible: isVisible(threshold),
     });
   }, 10);
 
@@ -90,10 +96,11 @@ export default class Affordance extends Component {
   };
 
   render() {
+    const { color } = this.props;
     const { visible } = this.state;
     return (
       <Fade onClick={this.handleClick} visible={visible}>
-        <BouncingIcon>expand_more</BouncingIcon>
+        <BouncingIcon color={color}>expand_more</BouncingIcon>
       </Fade>
     );
   }

@@ -17,7 +17,7 @@ const IntroPage = ({ title, tagline }) => {
         {title}
       </H1>
       <Tagline>{tagline}</Tagline>
-      <Affordance />
+      <Affordance threshold={0} />
     </Page>
   );
 };
