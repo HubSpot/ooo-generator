@@ -4,6 +4,12 @@
   "description": "Out of Office Email Generator",
   "version": "1.0.0",
   "author": "Ben Anderson <banderson@hubspot.com>",
+  "contributors": [
+    "Hannah Fleishman <hfleishman@hubspot.com>",
+    "Nicholas Hwang <nhwang@hubspot.com>",
+    "Adam Markon <amarkon@hubspot.com>",
+    "Katherine Schick <kschick@hubspot.com>"
+  ],
   "engines": {
     "node": ">=8.0.0"
   },
