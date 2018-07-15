@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { getDocumentHeight } from '../../lib/window';
+import Affordance from '../affordance';
 import Form from './form';
 import Loading from './loading';
 import Choices from './choices';
@@ -32,6 +34,8 @@ export default class Generator extends React.Component {
     const templates = extractTemplates(props.data);
     const { formData } = this.state;
 
+    this.ref = React.createRef();
+
     this.components = [
       {
         component: Form,
@@ -44,16 +48,33 @@ export default class Generator extends React.Component {
         component: Loading,
         props: { timeout: 2000, onNextStep: this.nextStep },
       },
-      { component: Choices, props: { templates, metadata: formData } },
+      {
+        component: Choices,
+        props: { templates, metadata: formData },
+      },
     ];
   }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateThreshold.bind(this));
+    this.updateThreshold();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateThreshold.bind(this));
+  }
+
+  updateThreshold = () => {
+    const { current: $container } = this.ref;
+    this.setState({ threshold: $container.offsetTop });
+  };
 
   handleChange = ({ target: { value } }, field) => {
     this.setState(prevState => ({
       formData: {
         ...prevState.formData,
-        [field] : value,
-      }
+        [field]: value,
+      },
     }));
   };
 
@@ -64,13 +85,25 @@ export default class Generator extends React.Component {
 
     this.components[2].props = {
       ...this.components[2].props,
-      metadata: this.state.formData
+      metadata: this.state.formData,
     };
   };
 
   render() {
-    const Component = this.components[this.state.step].component;
-    const props = this.components[this.state.step].props;
-    return <Component {...props} />;
+    const { step, threshold } = this.state;
+    const { component: Component, props } = this.components[step];
+
+    return (
+      <div ref={this.ref}>
+        <Component {...props} />
+        {step === 2 ? (
+          <Affordance
+            color="secondary"
+            scrollTo={getDocumentHeight()}
+            threshold={threshold}
+          />
+        ) : null}
+      </div>
+    );
   }
 }

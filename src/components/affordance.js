@@ -52,6 +52,7 @@ const isVisible = (threshold, buffer = 50) =>
 export default class Affordance extends Component {
   static propTypes = {
     color: PropTypes.oneOf(['primary', 'secondary']),
+    scrollTo: PropTypes.number,
     threshold: PropTypes.number,
   };
 
@@ -85,12 +86,9 @@ export default class Affordance extends Component {
   }, 10);
 
   handleClick = () => {
-    const height = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
+    const { scrollTo } = this.props;
     window.scroll({
-      top: height,
+      top: scrollTo,
       behavior: 'smooth',
     });
   };

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { getViewportHeight } from '../../lib/window';
 import { H1, H4 } from '../style/headers';
 import Page from '../page';
 import Affordance from '../affordance';
@@ -17,7 +18,7 @@ const IntroPage = ({ title, tagline }) => {
         {title}
       </H1>
       <Tagline>{tagline}</Tagline>
-      <Affordance threshold={0} />
+      <Affordance scrollTo={getViewportHeight()} threshold={0} />
     </Page>
   );
 };
