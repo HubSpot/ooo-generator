@@ -6,7 +6,6 @@ import TextField from '@material-ui/core/TextField';
 import _Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 
-import { DateRangePicker } from '../date-range-picker';
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
@@ -22,15 +21,13 @@ const Button = styled(_Button)`
 
 export default class Form extends React.Component {
   static propTypes = {
+    handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
   };
 
-  state = {
-    startDate: null,
-    endDate: null,
-  };
-
   render() {
+    const { handleChange, onSubmit } = this.props;
+
     return (
       <Page align="center">
         <H2 mb={4}>
@@ -54,8 +51,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="First name"
-                  id="first"
-                  name="first"
+                  id="firstName"
+                  name="firstName"
+                  onChange={e => handleChange(e, 'firstName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -63,26 +61,31 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Last name"
-                  id="last"
-                  name="last"
+                  id="lastName"
+                  name="lastName"
+                  onChange={e => handleChange(e, 'lastName')}
                 />
               </Box>
             </Flex>
             <Flex justify="center">
-              <Box px={3} pt={4} width={2 / 3}>
-                <DateRangePicker
-                  startDate={this.state.startDate}
-                  startDateId="date-start"
-                  endDate={this.state.endDate}
-                  endDateId="date-end"
-                  onDatesChange={({ startDate, endDate }) =>
-                    this.setState({ startDate, endDate })
-                  }
-                  focusedInput={this.state.focusedInput}
-                  onFocusChange={focusedInput =>
-                    this.setState({ focusedInput })
-                  }
-                  showClearDates={true}
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Vacation start date"
+                  id="startDate"
+                  name="startDate"
+                  onChange={e => handleChange(e, 'startDate')}
+                />
+              </Box>
+              <Box px={3} pt={4} width={1 / 3}>
+                <TextField
+                  style={{ width: '100%' }}
+                  required
+                  label="Vacation end date"
+                  id="returnDate"
+                  name="returnDate"
+                  onChange={e => handleChange(e, 'returnDate')}
                 />
               </Box>
             </Flex>
@@ -94,6 +97,7 @@ export default class Form extends React.Component {
                   label="Destination"
                   id="destination"
                   name="destination"
+                  onChange={e => handleChange(e, 'destination')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -103,6 +107,7 @@ export default class Form extends React.Component {
                   label="Activity"
                   id="activity"
                   name="activity"
+                  onChange={e => handleChange(e, 'activity')}
                 />
               </Box>
             </Flex>
@@ -112,8 +117,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Name"
-                  id="emergencyName"
-                  name="emergencyName"
+                  id="emergencyContactName"
+                  name="emergencyContactName"
+                  onChange={e => handleChange(e, 'emergencyContactName')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
@@ -121,8 +127,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Email"
-                  id="emergencyEmail"
-                  name="emergencyEmail"
+                  id="emergencyContactEmail"
+                  name="emergencyContactEmail"
+                  onChange={e => handleChange(e, 'emergencyContactEmail')}
                 />
               </Box>
             </Flex>
@@ -131,7 +138,7 @@ export default class Form extends React.Component {
               disableRipple
               size="large"
               variant="contained"
-              onClick={this.props.onSubmit}
+              onClick={onSubmit}
             >
               Submit
             </Button>
