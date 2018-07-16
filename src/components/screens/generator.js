@@ -20,7 +20,7 @@ export default class Generator extends React.Component {
     formData: {
       firstName: '',
       lastName: '',
-      startDate: '',
+      leaveDate: '',
       returnDate: '',
       destination: '',
       activity: '',

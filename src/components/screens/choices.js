@@ -20,11 +20,6 @@ export default class Choices extends React.Component {
     templates: [],
   };
 
-  state = {
-    startDate: null,
-    endDate: null,
-  };
-
   render() {
     const { metadata, templates } = this.props;
     const [first, second] = compose(

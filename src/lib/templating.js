@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export const Fields = {
   firstName: 'First Name',
   lastName: 'Last Name',
-  startDate: 'Start Date',
+  leaveDate: 'Leave Date',
   returnDate: 'Return Date',
   destination: 'Destination',
   activity: 'Activity',
