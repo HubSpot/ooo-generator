@@ -81,9 +81,9 @@ export default class Form extends React.Component {
                   style={{ width: '100%' }}
                   required
                   label="Vacation start date"
-                  id="startDate"
-                  name="startDate"
-                  onChange={e => handleChange(e, 'startDate')}
+                  id="leaveDate"
+                  name="leaveDate"
+                  onChange={e => handleChange(e, 'leaveDate')}
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
