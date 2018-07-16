@@ -1,3 +1,6 @@
+env:
+  DEVTOOLSET_EXEC: $WORKSPACE/.devtoolset-exec
+
 steps:
   - description: make devtoolset-exec
     commands:
