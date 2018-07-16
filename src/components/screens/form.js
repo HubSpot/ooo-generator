@@ -3,19 +3,27 @@ import PropTypes from 'prop-types';
 
 import { Flex, Box } from 'rebass';
 import TextField from '@material-ui/core/TextField';
-import _Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 
-const Button = styled(_Button)`
+const StyledButton = styled(Button)`
   margin-top: 20px !important;
   text-transform: uppercase;
 
   && span {
+    font-family: 'Comfortaa';
     color: white;
+  }
+`;
+
+const StyledTextField = styled(TextField)`
+  input,
+  label {
+    font-family: 'Comfortaa';
   }
 `;
 
@@ -47,7 +55,7 @@ export default class Form extends React.Component {
           <form>
             <Flex justify="center">
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="First name"
@@ -57,7 +65,7 @@ export default class Form extends React.Component {
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Last name"
@@ -69,7 +77,7 @@ export default class Form extends React.Component {
             </Flex>
             <Flex justify="center">
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Vacation start date"
@@ -79,7 +87,7 @@ export default class Form extends React.Component {
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Vacation end date"
@@ -91,7 +99,7 @@ export default class Form extends React.Component {
             </Flex>
             <Flex justify="center">
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Destination"
@@ -101,7 +109,7 @@ export default class Form extends React.Component {
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Activity"
@@ -113,7 +121,7 @@ export default class Form extends React.Component {
             </Flex>
             <Flex justify="center">
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Name"
@@ -123,7 +131,7 @@ export default class Form extends React.Component {
                 />
               </Box>
               <Box px={3} pt={4} width={1 / 3}>
-                <TextField
+                <StyledTextField
                   style={{ width: '100%' }}
                   required
                   label="Emergency Contact Email"
@@ -133,7 +141,7 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Button
+            <StyledButton
               color="primary"
               disableRipple
               size="large"
@@ -141,7 +149,7 @@ export default class Form extends React.Component {
               onClick={onSubmit}
             >
               Submit
-            </Button>
+            </StyledButton>
           </form>
         </FormStyles>
       </Page>
