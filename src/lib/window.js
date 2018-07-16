@@ -1,4 +1,12 @@
-export const getViewportHeight = () =>
-  Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+const attempt = (fn, fallback = 0) => (...args) =>
+  typeof document !== 'undefined' && typeof window !== 'undefined'
+    ? fn(...args)
+    : fallback;
 
-export const getDocumentHeight = () => document.body.scrollHeight;
+export const getViewportHeight = attempt(() =>
+  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+);
+
+export const getDocumentHeight = attempt(
+  () => (document ? document.body.scrollHeight : 0)
+);
