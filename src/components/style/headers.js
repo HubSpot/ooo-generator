@@ -4,10 +4,10 @@ import omitProps from '../hoc/omitProps';
 import * as tokens from './tokens';
 
 const fontSizes = {
-  xxl: 82,
-  xl: 60,
-  lg: 42,
-  md: 36,
+  xxl: 56,
+  xl: 48,
+  lg: 38,
+  md: 32,
   sm: 24,
   xs: 20,
   xxs: 16,
@@ -27,7 +27,11 @@ const baseTextStyles = css`
   text-transform: ${({ upper }) => (upper ? 'uppercase' : 'none')};
 `;
 
-const responsiveFonts = (tablet, mobile) => `
+const responsiveFonts = (huge, tablet, mobile) => `
+  @media (min-width: 1440px) {
+    font-size: ${huge}px;
+  }
+
   @media (max-width: 768px) {
     font-size: ${tablet}px;
   }
@@ -44,7 +48,7 @@ export const H1 = styled(Base).attrs({
   upper: ({ upper = true }) => upper,
 })`
   ${() => baseTextStyles};
-  ${responsiveFonts(fontSizes.xl, fontSizes.lg)};
+  ${responsiveFonts(fontSizes.xxl, fontSizes.xl, fontSizes.lg)};
 `;
 
 export const H2 = styled(Base).attrs({
@@ -52,7 +56,7 @@ export const H2 = styled(Base).attrs({
   upper: ({ upper = true }) => upper,
 })`
   ${() => baseTextStyles};
-  ${responsiveFonts(fontSizes.lg, fontSizes.md)};
+  ${responsiveFonts(fontSizes.xl, fontSizes.lg, fontSizes.md)};
 `;
 
 export const H3 = styled(Base).attrs({
@@ -60,7 +64,7 @@ export const H3 = styled(Base).attrs({
   upper: ({ upper = true }) => upper,
 })`
   ${() => baseTextStyles};
-  ${responsiveFonts(fontSizes.md, fontSizes.sm)};
+  ${responsiveFonts(fontSizes.lg, fontSizes.md, fontSizes.sm)};
 `;
 
 export const H4 = styled(Base).attrs({
@@ -69,15 +73,15 @@ export const H4 = styled(Base).attrs({
   upper: ({ upper = true }) => upper,
 })`
   ${() => baseTextStyles};
-  ${responsiveFonts(fontSizes.sm, fontSizes.xs)};
+  ${responsiveFonts(fontSizes.md, fontSizes.sm, fontSizes.xs)};
 `;
 
 export const H5 = styled(Base).attrs({
   bold: ({ bold = true }) => bold,
   family: ({ family = 'comfort' }) => family,
-  size: ({ size = fontSizes.sm }) => size,
+  size: ({ size = fontSizes.xs }) => size,
 })`
   ${() => baseTextStyles};
   line-height: 1.5;
-  ${responsiveFonts(fontSizes.xs, fontSizes.xxs)};
+  ${responsiveFonts(fontSizes.xs, fontSizes.xs, fontSizes.xxs)};
 `;

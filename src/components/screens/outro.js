@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex, Box } from 'rebass';
 
 import Page from '../page';
-import { H1, H5 } from '../style/headers';
+import { H2, H5 } from '../style/headers';
 import logo from '../../images/hubspotlogo-web-white.png';
 
 const OutroPage = () => {
@@ -10,7 +10,7 @@ const OutroPage = () => {
     <Page maxWidth={1050} plain={false} align="center" textAlign="left">
       <Flex>
         <Box width={750} align="center">
-          <H1 my={4}>There’s Lots to Love About Vacation.</H1>
+          <H2 my={4}>There’s A Lot to Love About Vacation.</H2>
           <H5 my={4}>
             Time off from work helps us recharge.<br />
             Whether you relax on the beach, hike a mountain, or spend time with
@@ -18,11 +18,20 @@ const OutroPage = () => {
             at the office.
           </H5>
           <H5 my={4}>
-            {`That's why HubSpot's a big fan of flexibility. Our unlimited
-            vacation policy (and its OOO messages) is just one way we try to
-            create a flexible, inclusive culture.`}
+            That&apos;s why HubSpot&apos;s a big fan of flexibility. Our
+            unlimited vacation policy (and its OOO messages) is just one way we
+            try to create a flexible, inclusive culture. Learn more about
+            working at HubSpot at{' '}
+            <a
+              style={{ color: 'white' }}
+              href="https://hubspot.com/jobs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              hubspot.com/jobs
+            </a>
           </H5>
-          <img width="250" src={logo} />
+          <img width="200" src={logo} />
         </Box>
       </Flex>
     </Page>
