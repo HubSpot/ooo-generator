@@ -23,6 +23,18 @@ const StyledFlex = styled(Flex)`
   }
 `;
 
+const StyledButton = styled(Button)`
+  && span {
+    font-family: 'Comfortaa';
+  }
+`;
+
+const StyledTooltip = styled(Tooltip)`
+  && div {
+    font-family: 'Comfortaa';
+  }
+`;
+
 const withWatermark = message =>
   `${message}\n\nMade with love by HubSpot's Out-Of-Office Email Generator`;
 
@@ -79,8 +91,8 @@ class Choice extends Component {
           </Box>
           <Box pl={4} width={1 / 5}>
             <Flex flexDirection="column">
-              <Tooltip open={timer != null} placement="top" title="Copied!">
-                <Button
+              <StyledTooltip open={timer != null} placement="top" title="Copied!">
+                <StyledButton
                   buttonRef={$btn => (this.ref.current = $btn)}
                   color="primary"
                   disableRipple
@@ -88,8 +100,8 @@ class Choice extends Component {
                   variant="contained"
                 >
                   Copy
-                </Button>
-              </Tooltip>
+                </StyledButton>
+              </StyledTooltip>
             </Flex>
           </Box>
         </StyledFlex>
