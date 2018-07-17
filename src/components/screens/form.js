@@ -112,7 +112,7 @@ export default class Form extends React.Component {
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
-                  label="Activity"
+                  label="Activity (E.g. snorkeling)"
                   id="activity"
                   name="activity"
                   onChange={e => handleChange(e, 'activity')}
