@@ -27,6 +27,12 @@ class Layout extends Component {
             { name: 'description', content: data.site.siteMetadata.desc },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
             { name: 'viewport', content: 'width=device-width' },
+            { name: 'og:title', content: 'Out of Office Email Generator' },
+            {
+              name: 'og:title',
+              content: 'Because taking vacation should be fun.',
+            },
+            { name: 'og:image', content: '/og.png' },
           ]}
         >
           <link rel="shortcut icon" href="/favicon.ico" />
