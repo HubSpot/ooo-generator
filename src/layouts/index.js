@@ -29,7 +29,7 @@ class Layout extends Component {
             { name: 'viewport', content: 'width=device-width' },
             { name: 'og:title', content: 'Out of Office Email Generator' },
             {
-              name: 'og:title',
+              name: 'og:description',
               content: 'Because taking vacation should be fun.',
             },
             { name: 'og:image', content: '/og.png' },
