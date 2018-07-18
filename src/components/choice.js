@@ -36,7 +36,7 @@ const StyledTooltip = styled(Tooltip)`
 `;
 
 const withWatermark = message =>
-  `${message}\n\nMade with love by HubSpot's Out-Of-Office Email Generator`;
+  `${message}\n\nMade with love by HubSpot's Out of Office Generator at ooogenerator.com`;
 
 class Choice extends Component {
   constructor() {
@@ -91,7 +91,11 @@ class Choice extends Component {
           </Box>
           <Box pl={4} width={1 / 5}>
             <Flex flexDirection="column">
-              <StyledTooltip open={timer != null} placement="top" title="Copied!">
+              <StyledTooltip
+                open={timer != null}
+                placement="top"
+                title="Copied!"
+              >
                 <StyledButton
                   buttonRef={$btn => (this.ref.current = $btn)}
                   color="primary"
