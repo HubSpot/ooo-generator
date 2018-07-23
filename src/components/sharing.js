@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -8,31 +9,42 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
+const StyledFacebookShareButton = styled(FacebookShareButton)`
+  display: inline-block;
+  margin-right: 12px;
+`;
+
+const StyledTwitterShareButton = styled(TwitterShareButton)`
+  display: inline-block;
+`;
+
+const StyledLinkedinShareButton = styled(LinkedinShareButton)`
+  display: inline-block;
+  margin-left: 12px;
+`;
+
 const Sharing = () => (
   <div>
-    <FacebookShareButton
+    <StyledFacebookShareButton
       url="https://www.ooogenerator.com"
       quote="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox: www.ooogenerator.com"
-      style={{ display: 'inline-block', marginRight: '12px' }}
     >
       <FacebookIcon round={true} size={48} />
-    </FacebookShareButton>
-    <TwitterShareButton
+    </StyledFacebookShareButton>
+    <StyledTwitterShareButton
       url="https://www.ooogenerator.com"
       title="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox:"
       via="HubSpot"
-      style={{ display: 'inline-block' }}
     >
       <TwitterIcon round={true} size={48} />
-    </TwitterShareButton>
-    <LinkedinShareButton
+    </StyledTwitterShareButton>
+    <StyledLinkedinShareButton
       url="https://www.ooogenerator.com"
       title="OOO Generator"
       description="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox: www.ooogenerator.com"
-      style={{ display: 'inline-block', marginLeft: '12px' }}
     >
       <LinkedinIcon round={true} size={48} />
-    </LinkedinShareButton>
+    </StyledLinkedinShareButton>
   </div>
 );
 
