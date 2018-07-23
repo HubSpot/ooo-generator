@@ -12,9 +12,13 @@ import {
 const URL = 'https://www.ooogenerator.com';
 const DESCRIPTION = "Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox:";
 
+const Wrapper = styled.div`
+  margin-bottom: 16px;
+`;
+
 const StyledFacebookShareButton = styled(FacebookShareButton)`
   display: inline-block;
-  margin-right: 12px;
+  margin-right: 16px;
 `;
 
 const StyledTwitterShareButton = styled(TwitterShareButton)`
@@ -23,32 +27,32 @@ const StyledTwitterShareButton = styled(TwitterShareButton)`
 
 const StyledLinkedinShareButton = styled(LinkedinShareButton)`
   display: inline-block;
-  margin-left: 12px;
+  margin-left: 16px;
 `;
 
 const Sharing = () => (
-  <div>
+  <Wrapper>
     <StyledFacebookShareButton
       url={URL}
       quote={`${DESCRIPTION} www.ooogenerator.com`}
     >
-      <FacebookIcon round={true} size={48} />
+      <FacebookIcon round={true} size={36} />
     </StyledFacebookShareButton>
     <StyledTwitterShareButton
       url={URL}
       title={DESCRIPTION}
       via="HubSpot"
     >
-      <TwitterIcon round={true} size={48} />
+      <TwitterIcon round={true} size={36} />
     </StyledTwitterShareButton>
     <StyledLinkedinShareButton
       url={URL}
       title="OOO Generator"
       description={`${DESCRIPTION} www.ooogenerator.com`}
     >
-      <LinkedinIcon round={true} size={48} />
+      <LinkedinIcon round={true} size={36} />
     </StyledLinkedinShareButton>
-  </div>
+  </Wrapper>
 );
 
 export default Sharing;

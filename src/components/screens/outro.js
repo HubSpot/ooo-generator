@@ -32,8 +32,8 @@ const OutroPage = () => {
               hubspot.com/jobs
             </a>
           </H5>
-          <img width="200" src={logo} />
           <Sharing />
+          <img width="160" src={logo} />
         </Box>
       </Flex>
     </Page>
