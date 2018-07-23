@@ -9,6 +9,9 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
+const URL = 'https://www.ooogenerator.com';
+const DESCRIPTION = "Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox:";
+
 const StyledFacebookShareButton = styled(FacebookShareButton)`
   display: inline-block;
   margin-right: 12px;
@@ -26,22 +29,22 @@ const StyledLinkedinShareButton = styled(LinkedinShareButton)`
 const Sharing = () => (
   <div>
     <StyledFacebookShareButton
-      url="https://www.ooogenerator.com"
-      quote="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox: www.ooogenerator.com"
+      url={URL}
+      quote={`${DESCRIPTION} www.ooogenerator.com`}
     >
       <FacebookIcon round={true} size={48} />
     </StyledFacebookShareButton>
     <StyledTwitterShareButton
-      url="https://www.ooogenerator.com"
-      title="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox:"
+      url={URL}
+      title={DESCRIPTION}
       via="HubSpot"
     >
       <TwitterIcon round={true} size={48} />
     </StyledTwitterShareButton>
     <StyledLinkedinShareButton
-      url="https://www.ooogenerator.com"
+      url={URL}
       title="OOO Generator"
-      description="Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox: www.ooogenerator.com"
+      description={`${DESCRIPTION} www.ooogenerator.com`}
     >
       <LinkedinIcon round={true} size={48} />
     </StyledLinkedinShareButton>
