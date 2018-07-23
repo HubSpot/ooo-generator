@@ -11,7 +11,8 @@ import { H2 } from '../style/headers';
 import Page from '../page';
 
 const StyledButton = styled(Button)`
-  margin-top: 20px !important;
+  margin-top: 48px !important;
+  margin-bottom: 42px !important;
   text-transform: uppercase;
 
   && span {
@@ -38,7 +39,7 @@ export default class Form extends React.Component {
 
     return (
       <Page align="center">
-        <H2 mb={4}>
+        <H2 mb={4} style={{ paddingTop: '40px' }}>
           You’re Ready For Vacation.<br />But Is Your Inbox?
         </H2>
         <p>
