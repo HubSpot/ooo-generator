@@ -14,21 +14,32 @@ const Fullscreen = styled(Page)`
   width: 100vw;
 `;
 
-const LoadingPage = ({ timeout, onNextStep }) => {
-  setTimeout(onNextStep, timeout);
-  return (
-    <Fullscreen align="center" plain={false}>
-      <H3 color="whiteish" mb={4}>
-        Please wait while we generate<br />your vacation-worthy OOO message
-      </H3>
-      <Spinner />
-    </Fullscreen>
-  );
-};
+class LoadingPage extends React.Component {
+  static propTypes = {
+    timeout: PropTypes.number,
+    onNextStep: PropTypes.func,
+  };
 
-LoadingPage.propTypes = {
-  timeout: PropTypes.number,
-  onNextStep: PropTypes.func,
-};
+  componentDidMount() {
+    const { timeout, onNextStep } = this.props;
+    setTimeout(onNextStep, timeout);
+    document.body.style.overflow = 'hidden';
+  }
+
+  componentWillUnmount() {
+    document.body.style.overflow = null;
+  }
+
+  render() {
+    return (
+      <Fullscreen align="center" plain={false}>
+        <H3 color="whiteish" mb={4}>
+          Please wait while we generate<br />your vacation-worthy OOO message
+        </H3>
+        <Spinner />
+      </Fullscreen>
+    );
+  }
+}
 
 export default LoadingPage;
