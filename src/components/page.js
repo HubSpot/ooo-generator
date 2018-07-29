@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import overlay from '../images/background-overlay.png';
 
-import { blackish, pinkish, pinkishWithOpacity, whiteish } from './style/tokens';
+import {
+  blackish,
+  pinkish,
+  pinkishWithOpacity,
+  whiteish,
+} from './style/tokens';
 
 const backgrounds = {
   festive: pinkish,
