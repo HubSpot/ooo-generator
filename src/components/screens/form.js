@@ -25,8 +25,22 @@ const StyledTextField = styled(TextField)`
   input,
   label {
     font-family: 'Comfortaa';
+
+    @media (min-width: 1440px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
   }
 `;
+
+const responsiveWidths = [9 / 10, 1 / 2, 2 / 5];
 
 export default class Form extends React.Component {
   static propTypes = {
@@ -54,8 +68,8 @@ export default class Form extends React.Component {
         </p>
         <FormStyles>
           <form>
-            <Flex justify="center">
-              <Box px={3} pt={4} width={1 / 3}>
+            <Flex justify="center" flexWrap="wrap">
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -65,7 +79,7 @@ export default class Form extends React.Component {
                   onChange={e => handleChange(e, 'firstName')}
                 />
               </Box>
-              <Box px={3} pt={4} width={1 / 3}>
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -76,8 +90,8 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center">
-              <Box px={3} pt={4} width={1 / 3}>
+            <Flex justify="center" flexWrap="wrap">
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -87,7 +101,7 @@ export default class Form extends React.Component {
                   onChange={e => handleChange(e, 'leaveDate')}
                 />
               </Box>
-              <Box px={3} pt={4} width={1 / 3}>
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -98,8 +112,8 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center">
-              <Box px={3} pt={4} width={1 / 3}>
+            <Flex justify="center" flexWrap="wrap">
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -109,7 +123,7 @@ export default class Form extends React.Component {
                   onChange={e => handleChange(e, 'destination')}
                 />
               </Box>
-              <Box px={3} pt={4} width={1 / 3}>
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -120,8 +134,8 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center">
-              <Box px={3} pt={4} width={1 / 3}>
+            <Flex justify="center" flexWrap="wrap">
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
@@ -131,7 +145,7 @@ export default class Form extends React.Component {
                   onChange={e => handleChange(e, 'emergencyContactName')}
                 />
               </Box>
-              <Box px={3} pt={4} width={1 / 3}>
+              <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
