@@ -5,11 +5,12 @@ import compose from 'lodash/fp/compose';
 import sampleSize from 'lodash/fp/sampleSize';
 
 import { MetadataPropTypes, interpolate } from '../../lib/templating';
+import { getViewportHeight } from '../../lib/window';
 import Page from '../page';
 import Choice from '../choice';
 import { H1, H5 } from '../style/headers';
 
-export default class Choices extends React.Component {
+export default class Choices extends React.PureComponent {
   static propTypes = {
     metadata: MetadataPropTypes,
     templates: PropTypes.arrayOf(PropTypes.string),
@@ -19,6 +20,12 @@ export default class Choices extends React.Component {
     metadata: {},
     templates: [],
   };
+
+  componentDidMount() {
+    window.scroll({
+      top: getViewportHeight(),
+    });
+  }
 
   render() {
     const { metadata, templates } = this.props;
@@ -30,7 +37,7 @@ export default class Choices extends React.Component {
     return (
       <Page align="center" textAlign="left">
         <H1 color="pinkish">OOO Messages</H1>
-        <H5 mb={5}>
+        <H5 mb={[2, 4]}>
           Pick the out of office message that will make your contacts smile.<br />
           Copy it to your clipboard and paste it into your email settings.<br />
           {"Then get out of here. It's vacation time!"}
