@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getDocumentHeight } from '../../lib/window';
-import Affordance from '../affordance';
 import Form from './form';
 import Loading from './loading';
 import Choices from './choices';
@@ -34,8 +32,6 @@ export default class Generator extends React.Component {
     const templates = extractTemplates(props.data);
     const { formData } = this.state;
 
-    this.ref = React.createRef();
-
     this.components = [
       {
         component: Form,
@@ -55,20 +51,6 @@ export default class Generator extends React.Component {
     ];
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateThreshold.bind(this));
-    this.updateThreshold();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateThreshold.bind(this));
-  }
-
-  updateThreshold = () => {
-    const { current: $container } = this.ref;
-    this.setState({ threshold: $container.offsetTop });
-  };
-
   handleChange = ({ target: { value } }, field) => {
     this.setState(prevState => ({
       formData: {
@@ -78,7 +60,11 @@ export default class Generator extends React.Component {
     }));
   };
 
-  nextStep = () => {
+  nextStep = event => {
+    if (typeof event === 'object') {
+      event.preventDefault();
+    }
+
     this.setState(prev => ({
       step: Math.min(this.components.length - 1, prev.step + 1),
     }));
@@ -90,20 +76,9 @@ export default class Generator extends React.Component {
   };
 
   render() {
-    const { step, threshold } = this.state;
+    const { step } = this.state;
     const { component: Component, props } = this.components[step];
 
-    return (
-      <div ref={this.ref}>
-        <Component {...props} />
-        {step === 2 ? (
-          <Affordance
-            color="secondary"
-            scrollTo={getDocumentHeight()}
-            threshold={threshold}
-          />
-        ) : null}
-      </div>
-    );
+    return <Component {...props} />;
   }
 }
