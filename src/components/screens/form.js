@@ -159,9 +159,10 @@ export default class Form extends React.Component {
             <StyledButton
               color="primary"
               disableRipple
-              size="large"
-              variant="contained"
               onClick={onSubmit}
+              size="large"
+              type="submit"
+              variant="contained"
             >
               Submit
             </StyledButton>
