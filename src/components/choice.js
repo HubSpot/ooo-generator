@@ -12,20 +12,48 @@ import { ChoiceStyles } from './style/themes';
 const Blurb = styled.p`
   margin-top: 8px;
   white-space: pre-wrap;
-  border-left 0.2rem solid ${pinkish};
-  padding-left: 1.0rem;
-`;
+  border-left: 0.2rem solid ${pinkish};
+  padding-left: 1rem;
 
-const StyledFlex = styled(Flex)`
+  @media (min-width: 1440px) {
+    font-size: 16px;
+  }
+
   @media (max-width: 768px) {
-    flex-flow: column;
-    align-items: center;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
 const StyledButton = styled(Button)`
-  && span {
-    font-family: 'Comfortaa';
+  && {
+    > span {
+      font-family: 'Comfortaa';
+    }
+
+    @media (min-width: 1440px) {
+      min-width: 110px;
+      > span {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      min-width: 80px;
+      > span {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      min-width: 75px;
+      > span {
+        font-size: 14px;
+      }
+    }
   }
 `;
 
@@ -82,14 +110,14 @@ class Choice extends Component {
 
     return (
       <ChoiceStyles>
-        <StyledFlex alignItems="center" mb={10}>
-          <Box width={4 / 5}>
+        <Flex alignItems="center" flexWrap="wrap" mb={10}>
+          <Box width={[1, null, 4 / 5]}>
             <Heading fontSize={24} mt={3}>
               {title}
             </Heading>
             <Blurb>{message}</Blurb>
           </Box>
-          <Box pl={4} width={1 / 5}>
+          <Box pl={[0, null, 4]} width={(1, null, 1 / 5)}>
             <Flex flexDirection="column">
               <StyledTooltip
                 open={timer != null}
@@ -108,7 +136,7 @@ class Choice extends Component {
               </StyledTooltip>
             </Flex>
           </Box>
-        </StyledFlex>
+        </Flex>
       </ChoiceStyles>
     );
   }
