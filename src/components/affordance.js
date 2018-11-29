@@ -15,9 +15,9 @@ const bounce = keyframes`
   }
 `;
 
-const BouncingIcon = styled(Icon).attrs({
+const BouncingIcon = styled(Icon).attrs(() => ({
   size: 100,
-})`
+}))`
   && {
     animation: ${bounce} 2s ease-in-out infinite;
     bottom: 0;

@@ -18,6 +18,7 @@ const StyledButton = styled(Button)`
   && span {
     font-family: 'Comfortaa';
     color: white;
+    line-height: 1;
   }
 `;
 
@@ -54,7 +55,9 @@ export default class Form extends React.Component {
     return (
       <Page align="center">
         <H2 mb={4} style={{ paddingTop: '40px' }}>
-          You’re Ready For Vacation.<br />But Is Your Inbox?
+          You’re Ready For Vacation.
+          <br />
+          But Is Your Inbox?
         </H2>
         <p>
           {`Whether you're going on a tropical trip or signing off for a
@@ -68,7 +71,7 @@ export default class Form extends React.Component {
         </p>
         <FormStyles>
           <form>
-            <Flex justify="center" flexWrap="wrap">
+            <Flex justifyContent="center" flexWrap="wrap">
               <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
@@ -90,7 +93,7 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center" flexWrap="wrap">
+            <Flex justifyContent="center" flexWrap="wrap">
               <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
@@ -112,7 +115,7 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center" flexWrap="wrap">
+            <Flex justifyContent="center" flexWrap="wrap">
               <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}
@@ -134,7 +137,7 @@ export default class Form extends React.Component {
                 />
               </Box>
             </Flex>
-            <Flex justify="center" flexWrap="wrap">
+            <Flex justifyContent="center" flexWrap="wrap">
               <Box px={3} pt={4} width={responsiveWidths}>
                 <StyledTextField
                   style={{ width: '100%' }}

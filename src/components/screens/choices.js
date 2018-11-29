@@ -1,4 +1,5 @@
 import React from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import map from 'lodash/fp/map';
 import compose from 'lodash/fp/compose';
@@ -55,20 +56,26 @@ export default class Choices extends React.PureComponent {
   }
 
   updateThreshold = () => {
-    const { current: $container } = this.ref;
-    const threshold = $container.offsetHeight;
-    this.setState({ threshold });
+    const { current } = this.ref;
+    // eslint-disable-next-line react/no-find-dom-node
+    const $container = findDOMNode(current);
+    if ($container) {
+      const threshold = $container.offsetHeight;
+      this.setState({ threshold });
+    }
   };
 
   render() {
     const { first, second, threshold } = this.state;
 
     return (
-      <Page align="center" textAlign="left" innerRef={this.ref}>
+      <Page align="center" textAlign="left" ref={this.ref}>
         <H1 color="pinkish">OOO Messages</H1>
         <H5 mb={[2, 4]}>
-          Pick the out of office message that will make your contacts smile.<br />
-          Copy it to your clipboard and paste it into your email settings.<br />
+          Pick the out of office message that will make your contacts smile.
+          <br />
+          Copy it to your clipboard and paste it into your email settings.
+          <br />
           {"Then get out of here. It's vacation time!"}
         </H5>
         <Choice title="Message #1" message={first} />

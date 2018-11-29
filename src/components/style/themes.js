@@ -16,6 +16,7 @@ export const ChoiceStyles = props => {
           },
         },
         typography: {
+          useNextVariants: true,
           fontSize: 18,
           button: {
             textTransform: 'none',
@@ -36,9 +37,9 @@ export const FormStyles = props => {
             main: pinkish,
             dark: pinkish,
           },
-          text: {
-            primary: pinkish,
-          },
+        },
+        typography: {
+          useNextVariants: true,
         },
       })}
     />
