@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Layout from '../layouts';
 import IntroPage from '../components/screens/intro';
 import OutroPage from '../components/screens/outro';
-import styled from 'styled-components';
 import GeneratorPage from '../components/screens/generator';
 
 const extractSiteMetadata = ({ site: { siteMetadata } }) => siteMetadata;
@@ -15,11 +17,13 @@ const IndexPage = ({ data }) => {
   const { title, tagline } = extractSiteMetadata(data);
 
   return (
-    <Wrapper>
-      <IntroPage tagline={tagline} title={title} />
-      <GeneratorPage data={data} />
-      <OutroPage />
-    </Wrapper>
+    <Layout>
+      <Wrapper>
+        <IntroPage tagline={tagline} title={title} />
+        <GeneratorPage data={data} />
+        <OutroPage />
+      </Wrapper>
+    </Layout>
   );
 };
 

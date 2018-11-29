@@ -43,44 +43,54 @@ const responsiveFonts = (huge, tablet, mobile) => `
 
 const Base = omitProps(['bold', 'family', 'size', 'upper'])(Heading);
 
-export const H1 = styled(Base).attrs({
-  size: ({ size = fontSizes.xl }) => size,
-  upper: ({ upper = true }) => upper,
-})`
+export const H1 = styled(Base).attrs(
+  ({ size = fontSizes.xl, upper = true }) => ({
+    size,
+    upper,
+  })
+)`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.xxl, fontSizes.xl, fontSizes.lg)};
 `;
 
-export const H2 = styled(Base).attrs({
-  size: ({ size = fontSizes.lg }) => size,
-  upper: ({ upper = true }) => upper,
-})`
+export const H2 = styled(Base).attrs(
+  ({ size = fontSizes.lg, upper = true }) => ({
+    size,
+    upper,
+  })
+)`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.xl, fontSizes.lg, fontSizes.md)};
 `;
 
-export const H3 = styled(Base).attrs({
-  size: ({ size = fontSizes.md }) => size,
-  upper: ({ upper = true }) => upper,
-})`
+export const H3 = styled(Base).attrs(
+  ({ size = fontSizes.md, upper = true }) => ({
+    size,
+    upper,
+  })
+)`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.lg, fontSizes.md, fontSizes.sm)};
 `;
 
-export const H4 = styled(Base).attrs({
-  family: ({ family = 'comfort' }) => family,
-  size: ({ size = fontSizes.sm }) => size,
-  upper: ({ upper = true }) => upper,
-})`
+export const H4 = styled(Base).attrs(
+  ({ family = 'comfort', size = fontSizes.sm, upper = true }) => ({
+    family,
+    size,
+    upper,
+  })
+)`
   ${() => baseTextStyles};
   ${responsiveFonts(fontSizes.md, fontSizes.sm, fontSizes.xs)};
 `;
 
-export const H5 = styled(Base).attrs({
-  bold: ({ bold = true }) => bold,
-  family: ({ family = 'comfort' }) => family,
-  size: ({ size = fontSizes.xs }) => size,
-})`
+export const H5 = styled(Base).attrs(
+  ({ bold = true, family = 'comfort', size = fontSizes.xs }) => ({
+    bold,
+    family,
+    size,
+  })
+)`
   ${() => baseTextStyles};
   line-height: 1.5;
   ${responsiveFonts(fontSizes.xs, fontSizes.xs, fontSizes.xxs)};
