@@ -60,10 +60,12 @@ export default class Form extends React.Component {
           But Is Your Inbox?
         </H2>
         <p>
-          {`Whether you're going on a tropical trip or signing off for a
-          staycation, you have to write an out of office message. So, why not
-          write a good one? Saying you have "limited access to Wifi" isn't
-          fooling anyone. It's 2018, after all.`}
+          {`
+            Whether you're going on a tropical trip or headed home for the
+            holidays, you have to write an out of office email responder. So,
+            why not write a good one? Saying "Sorry, I have limited access to
+            Wifi" isn't fooling anyone. (We know you aren't sorry.)
+          `}
         </p>
         <p>
           {`Share quick details about your time away and the generator will give
