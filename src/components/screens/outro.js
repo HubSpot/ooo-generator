@@ -8,12 +8,13 @@ import logo from '../../images/hubspotlogo-web-white.png';
 
 const OutroPage = () => {
   return (
-    <Page maxWidth={1050} plain={false} align="center" textAlign="left">
+    <Page maxWidth={1050} dark={true} align="center" textAlign="left">
       <Flex>
         <Box width={750} align="center">
           <H2 my={4}>There’s A Lot to Love About Vacation.</H2>
           <H5 my={4}>
-            Time off from work helps us recharge.<br />
+            Time off from work helps us recharge.
+            <br />
             Whether you relax on the beach, hike a mountain, or spend time with
             family, taking a (guilt-free) vacation makes you better and happier
             at the office.

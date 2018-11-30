@@ -1,4 +1,4 @@
 export const whiteish = 'rgb(250, 250, 250)';
-export const pinkish = 'rgb(239, 133, 172)';
-export const pinkishWithOpacity = 'rgba(239, 133, 172, 0.85)';
-export const blackish = 'rgb(80, 80, 80)';
+export const grayish = 'rgb(234, 240, 246)';
+export const blueish = 'rgb(51, 71, 91, 1.0)';
+export const blueishWithOpacity = 'rgb(51, 71, 91, 0.75)';

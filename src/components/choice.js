@@ -6,13 +6,13 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Clipboard from 'clipboard';
 
-import { pinkish } from './style/tokens';
+import { blueish } from './style/tokens';
 import { ChoiceStyles } from './style/themes';
 
 const Blurb = styled.p`
   margin-top: 8px;
   white-space: pre-wrap;
-  border-left: 0.2rem solid ${pinkish};
+  border-left: 0.2rem solid ${blueish};
   padding-left: 1rem;
 
   @media (min-width: 1440px) {

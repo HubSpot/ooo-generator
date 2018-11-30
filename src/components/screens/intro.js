@@ -2,18 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import logo from '../../images/hubspotlogo-web-white.png';
 import { getViewportHeight } from '../../lib/window';
 import { H1, H4 } from '../style/headers';
 import Page from '../page';
 import Affordance from '../affordance';
 
+const Logo = styled.img`
+  width: 180px;
+  margin-bottom: 16px;
+`;
+
 const Tagline = styled(H4)`
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 `;
 
 const IntroPage = ({ title, tagline }) => {
   return (
-    <Page align="center" plain={false}>
+    <Page align="center" dark={true}>
+      <Logo src={logo} />
       <H1 mb={5} size="xxl">
         {title}
       </H1>

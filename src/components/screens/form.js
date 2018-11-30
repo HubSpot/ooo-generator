@@ -42,7 +42,7 @@ const StyledTextField = styled(TextField)`
 `;
 
 const Description = styled.p`
-  padding: 0 16px;
+  padding: 0 48px;
 `;
 
 const responsiveWidths = [9 / 10, 1 / 2, 2 / 5];
