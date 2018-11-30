@@ -1,21 +1,14 @@
+@import './fonts.css';
 @import './normalize.css';
 @import './react-spinner.css';
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-@font-face {
-  font-family: 'peace_sansregular';
-  src: url('./fonts/peace.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Comfortaa';
+  font-family: 'Avenir Next W02';
   line-height: 1.5;
   font-size: 16px;
   width: 100vw;

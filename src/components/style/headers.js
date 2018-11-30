@@ -13,14 +13,9 @@ const fontSizes = {
   xxs: 16,
 };
 
-const fontFamilies = {
-  peace: 'peace_sansregular',
-  comfort: 'Comfortaa',
-};
-
 const baseTextStyles = css`
   color: ${({ color }) => tokens[color] || color};
-  font-family: ${({ family }) => fontFamilies[family] || fontFamilies.peace};
+  font-family: Avenir Next W02;
   font-size: ${({ size }) =>
     typeof size === 'number' ? `${size}px` : `${fontSizes[size]}px`};
   font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
@@ -41,10 +36,11 @@ const responsiveFonts = (huge, tablet, mobile) => `
   }
 `;
 
-const Base = omitProps(['bold', 'family', 'size', 'upper'])(Heading);
+const Base = omitProps(['bold', 'size', 'upper'])(Heading);
 
 export const H1 = styled(Base).attrs(
-  ({ size = fontSizes.xl, upper = true }) => ({
+  ({ bold = true, size = fontSizes.xl, upper = true }) => ({
+    bold,
     size,
     upper,
   })
@@ -54,7 +50,8 @@ export const H1 = styled(Base).attrs(
 `;
 
 export const H2 = styled(Base).attrs(
-  ({ size = fontSizes.lg, upper = true }) => ({
+  ({ bold = true, size = fontSizes.lg, upper = true }) => ({
+    bold,
     size,
     upper,
   })
@@ -64,7 +61,8 @@ export const H2 = styled(Base).attrs(
 `;
 
 export const H3 = styled(Base).attrs(
-  ({ size = fontSizes.md, upper = true }) => ({
+  ({ bold = true, size = fontSizes.md, upper = true }) => ({
+    bold,
     size,
     upper,
   })
@@ -74,8 +72,7 @@ export const H3 = styled(Base).attrs(
 `;
 
 export const H4 = styled(Base).attrs(
-  ({ family = 'comfort', size = fontSizes.sm, upper = true }) => ({
-    family,
+  ({ size = fontSizes.sm, upper = true }) => ({
     size,
     upper,
   })
@@ -84,13 +81,9 @@ export const H4 = styled(Base).attrs(
   ${responsiveFonts(fontSizes.md, fontSizes.sm, fontSizes.xs)};
 `;
 
-export const H5 = styled(Base).attrs(
-  ({ bold = true, family = 'comfort', size = fontSizes.xs }) => ({
-    bold,
-    family,
-    size,
-  })
-)`
+export const H5 = styled(Base).attrs(({ size = fontSizes.xs }) => ({
+  size,
+}))`
   ${() => baseTextStyles};
   line-height: 1.5;
   ${responsiveFonts(fontSizes.xs, fontSizes.xs, fontSizes.xxs)};

@@ -31,7 +31,7 @@ const Blurb = styled.p`
 const StyledButton = styled(Button)`
   && {
     > span {
-      font-family: 'Comfortaa';
+      font-family: 'Avenir Next W02';
     }
 
     @media (min-width: 1440px) {
@@ -59,7 +59,7 @@ const StyledButton = styled(Button)`
 
 const StyledTooltip = styled(Tooltip)`
   && div {
-    font-family: 'Comfortaa';
+    font-family: 'Avenir Next W02';
   }
 `;
 

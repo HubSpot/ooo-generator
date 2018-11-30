@@ -16,7 +16,7 @@ const StyledButton = styled(Button)`
   text-transform: uppercase;
 
   && span {
-    font-family: 'Comfortaa';
+    font-family: 'Avenir Next W02';
     color: white;
     line-height: 1;
   }
@@ -25,7 +25,7 @@ const StyledButton = styled(Button)`
 const StyledTextField = styled(TextField)`
   input,
   label {
-    font-family: 'Comfortaa';
+    font-family: 'Avenir Next W02';
 
     @media (min-width: 1440px) {
       font-size: 16px;
@@ -39,6 +39,10 @@ const StyledTextField = styled(TextField)`
       font-size: 12px;
     }
   }
+`;
+
+const Description = styled.p`
+  padding: 0 16px;
 `;
 
 const responsiveWidths = [9 / 10, 1 / 2, 2 / 5];
@@ -59,18 +63,18 @@ export default class Form extends React.Component {
           <br />
           But Is Your Inbox?
         </H2>
-        <p>
+        <Description>
           {`
             Whether you're going on a tropical trip or headed home for the
             holidays, you have to write an out of office email responder. So,
             why not write a good one? Saying "Sorry, I have limited access to
             Wifi" isn't fooling anyone. (We know you aren't sorry.)
           `}
-        </p>
-        <p>
+        </Description>
+        <Description>
           {`Share quick details about your time away and the generator will give
           you an 'OOO' email that's as fun as your vacation. (Well, almost.)`}
-        </p>
+        </Description>
         <FormStyles>
           <form>
             <Flex justifyContent="center" flexWrap="wrap">
