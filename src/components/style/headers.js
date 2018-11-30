@@ -4,7 +4,7 @@ import omitProps from '../hoc/omitProps';
 import * as tokens from './tokens';
 
 const fontSizes = {
-  xxl: 56,
+  xxl: 64,
   xl: 48,
   lg: 38,
   md: 32,

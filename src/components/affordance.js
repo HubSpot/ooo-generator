@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import Icon from '@material-ui/core/Icon';
 import debounce from 'lodash/debounce';
-import { whiteish, pinkish } from './style/tokens';
+import { whiteish, blueish } from './style/tokens';
 
 const bounce = keyframes`
   0%, 100% {
@@ -21,7 +21,7 @@ const BouncingIcon = styled(Icon).attrs(() => ({
   && {
     animation: ${bounce} 2s ease-in-out infinite;
     bottom: 0;
-    color: ${({ color }) => (color === 'primary' ? whiteish : pinkish)};
+    color: ${({ color }) => (color === 'primary' ? whiteish : blueish)};
     font-size: ${({ size }) => `${size}px`};
     left: 50%;
     margin-left: ${({ size }) => `-${size / 2}px`};

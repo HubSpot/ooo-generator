@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import overlay from '../images/background-overlay.png';
+import darkBackgroundOverlay from '../images/dark-background-overlay.png';
 
-import {
-  blackish,
-  pinkish,
-  pinkishWithOpacity,
-  whiteish,
-} from './style/tokens';
+import { blueish, blueishWithOpacity, grayish, whiteish } from './style/tokens';
 
 const backgrounds = {
-  festive: pinkish,
-  plain: whiteish,
+  dark: blueish,
+  light: whiteish,
 };
 
 const textColors = {
-  festive: whiteish,
-  plain: blackish,
+  light: grayish,
+  dark: blueish,
 };
 
-const backgroundOverlay = `linear-gradient(${pinkishWithOpacity} 0%,
-  ${pinkishWithOpacity} 100%), url(${overlay})`;
+const backgroundOverlay = `linear-gradient(${blueishWithOpacity} 100%,
+  ${blueishWithOpacity} 0%), url(${darkBackgroundOverlay})`;
 
 const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
@@ -34,10 +29,10 @@ const Main = styled.main`
 `;
 
 const Shell = styled.main`
-  background-color: ${props =>
-    props.plain ? backgrounds.plain : backgrounds.festive};
-  background-image: ${props => !props.plain && backgroundOverlay};
-  color: ${props => (props.plain ? textColors.plain : textColors.festive)};
+  background-color: ${({ dark }) =>
+    dark ? backgrounds.dark : backgrounds.light};
+  background-image: ${({ dark }) => dark && backgroundOverlay};
+  color: ${({ dark }) => (dark ? textColors.light : textColors.dark)};
   display: flex;
   margin: 0;
   min-height: 100vh;
@@ -48,13 +43,15 @@ export class Page extends React.Component {
   static propTypes = {
     align: PropTypes.oneOf(['center', 'default']),
     children: PropTypes.node,
-    plain: PropTypes.bool,
+    dark: PropTypes.bool,
+    overlay: PropTypes.bool,
     maxWidth: PropTypes.number,
     textAlign: PropTypes.oneOf(['center', 'left']),
   };
   static defaultProps = {
     align: 'default',
-    plain: true,
+    dark: false,
+    overlay: false,
     maxWidth: 960,
     textAlign: 'center',
   };

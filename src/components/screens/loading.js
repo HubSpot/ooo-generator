@@ -32,9 +32,11 @@ class LoadingPage extends React.Component {
 
   render() {
     return (
-      <Fullscreen align="center" plain={false}>
+      <Fullscreen align="center" dark={true}>
         <H3 color="whiteish" mb={4}>
-          Please wait while we generate<br />your vacation-worthy OOO message
+          Please wait while we generate
+          <br />
+          your vacation-worthy OOO message
         </H3>
         <Spinner />
       </Fullscreen>

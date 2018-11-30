@@ -70,7 +70,7 @@ export default class Choices extends React.PureComponent {
 
     return (
       <Page align="center" textAlign="left" ref={this.ref}>
-        <H1 color="pinkish">OOO Messages</H1>
+        <H1 color="blueish">OOO Messages</H1>
         <H5 mb={[2, 4]}>
           Pick the out of office message that will make your contacts smile.
           <br />
