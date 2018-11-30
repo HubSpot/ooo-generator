@@ -1,0 +1,162 @@
+@import url('http://fast.fonts.net/t/1.css?apiType=css&projectid=94733e4c-cfe1-4600-80c4-11463dcae41b');
+
+@font-face {
+  font-family: 'Avenir Next W04_n6';
+  src: url('fonts/47d79f32-82c5-4a74-9646-5150297aabc1.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W04';
+  src: url('fonts/47d79f32-82c5-4a74-9646-5150297aabc1.eot?#iefix');
+  src: url('fonts/47d79f32-82c5-4a74-9646-5150297aabc1.eot?#iefix')
+      format('eot'),
+    url('fonts/249228f0-61ac-40cc-a5a5-5609c9816e3f.woff2') format('woff2'),
+    url('fonts/efba18ed-80cc-49c4-997a-fbb140739d19.woff') format('woff'),
+    url('fonts/750a20ec-9242-42a8-b3bd-c4dcec552196.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W04_n7';
+  src: url('fonts/6ff8ab07-ccb4-4a91-8f0f-2bd4367902e8.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W04';
+  src: url('fonts/6ff8ab07-ccb4-4a91-8f0f-2bd4367902e8.eot?#iefix');
+  src: url('fonts/6ff8ab07-ccb4-4a91-8f0f-2bd4367902e8.eot?#iefix')
+      format('eot'),
+    url('fonts/91799b0e-0ef8-446e-b274-5509412e1242.woff2') format('woff2'),
+    url('fonts/97fb5311-bdbd-46bc-bf69-3bcf8c744cda.woff') format('woff'),
+    url('fonts/88093bd3-b377-4278-8abe-8460dd24d0e8.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W01_n5';
+  src: url('fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W01';
+  src: url('fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix');
+  src: url('fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix')
+      format('eot'),
+    url('fonts/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2') format('woff2'),
+    url('fonts/1e9892c0-6927-4412-9874-1b82801ba47a.woff') format('woff'),
+    url('fonts/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W02_n4';
+  src: url('fonts/7a1b7ae7-5c29-481f-83ac-652e932c5509.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W02';
+  src: url('fonts/7a1b7ae7-5c29-481f-83ac-652e932c5509.eot?#iefix');
+  src: url('fonts/7a1b7ae7-5c29-481f-83ac-652e932c5509.eot?#iefix')
+      format('eot'),
+    url('fonts/bb590848-4012-46d6-a8d5-48c9893a176b.woff2') format('woff2'),
+    url('fonts/3a42a252-67ff-4186-88cf-762f56719ca1.woff') format('woff'),
+    url('fonts/dbc39ae3-2636-4653-a23e-8938bce2cf51.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W01_i5';
+  src: url('fonts/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W01';
+  src: url('fonts/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix');
+  src: url('fonts/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix')
+      format('eot'),
+    url('fonts/7377dbe6-f11a-4a05-b33c-bc8ce1f60f84.woff2') format('woff2'),
+    url('fonts/92b66dbd-4201-4ac2-a605-4d4ffc8705cc.woff') format('woff'),
+    url('fonts/18839597-afa8-4f0b-9abb-4a30262d0da8.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Avenir Next W02_i4';
+  src: url('fonts/23504b23-e297-4c91-ba98-deceeb0af199.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W02';
+  src: url('fonts/23504b23-e297-4c91-ba98-deceeb0af199.eot?#iefix');
+  src: url('fonts/23504b23-e297-4c91-ba98-deceeb0af199.eot?#iefix')
+      format('eot'),
+    url('fonts/4849e0c5-f7d0-45b0-8d87-80102f27934d.woff2') format('woff2'),
+    url('fonts/5191e4ce-5fdb-4b0b-b00f-b04e333dbf3e.woff') format('woff'),
+    url('fonts/7a4d3756-ab14-401a-b693-5980ada400da.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Avenir Next W01_n6';
+  src: url('fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W01';
+  src: url('fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix');
+  src: url('fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix')
+      format('eot'),
+    url('fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2') format('woff2'),
+    url('fonts/f26faddb-86cc-4477-a253-1e1287684336.woff') format('woff'),
+    url('fonts/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W02_n5';
+  src: url('fonts/f2c1017b-8f5f-4e69-8a34-3788975c6e84.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W02';
+  src: url('fonts/f2c1017b-8f5f-4e69-8a34-3788975c6e84.eot?#iefix');
+  src: url('fonts/f2c1017b-8f5f-4e69-8a34-3788975c6e84.eot?#iefix')
+      format('eot'),
+    url('fonts/7195d5d0-582f-42d4-86ca-9da8dc31146e.woff2') format('woff2'),
+    url('fonts/0417e965-6ae1-4395-8f71-f61ea767d523.woff') format('woff'),
+    url('fonts/eb8735e1-059f-4b58-b708-78ede4e39742.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W02_n6';
+  src: url('fonts/ec8454e9-1900-4157-902d-1667f20b503e.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W02';
+  src: url('fonts/ec8454e9-1900-4157-902d-1667f20b503e.eot?#iefix');
+  src: url('fonts/ec8454e9-1900-4157-902d-1667f20b503e.eot?#iefix')
+      format('eot'),
+    url('fonts/b86524f7-009e-4c08-a266-c43f1fb68e5e.woff2') format('woff2'),
+    url('fonts/e40e6ac5-f2bd-4d65-baf7-b1e397d7fdcc.woff') format('woff'),
+    url('fonts/34772968-ece3-42e3-9f0d-f5724cafa60e.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Next W02_n7';
+  src: url('fonts/51d861aa-f9b4-4afb-a019-d7d155c21072.eot?#iefix')
+    format('eot');
+}
+@font-face {
+  font-family: 'Avenir Next W02';
+  src: url('fonts/51d861aa-f9b4-4afb-a019-d7d155c21072.eot?#iefix');
+  src: url('fonts/51d861aa-f9b4-4afb-a019-d7d155c21072.eot?#iefix')
+      format('eot'),
+    url('fonts/b729a5ee-0221-40db-9a76-7b9e9b747f65.woff2') format('woff2'),
+    url('fonts/51a56502-44d2-4d70-808f-fc822da45209.woff') format('woff'),
+    url('fonts/11eb4d83-a3b4-4ab8-a47c-ef9173d239fc.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

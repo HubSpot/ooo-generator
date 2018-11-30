@@ -41,9 +41,6 @@
 
 ### Fonts used
 
-- [Comfortaa](https://fonts.google.com/specimen/Comfortaa)
-- [Peace Sans](https://www.behance.net/gallery/34760019/Peace-Sans-FREE-FONT)
-- ~~[Kollektif](http://www.bravenewfonts.com/)~~ (no longer used)
 - [Material Icons](https://fonts.googleapis.com/icon?family=Material+Icons)
 
 ### Styled components
