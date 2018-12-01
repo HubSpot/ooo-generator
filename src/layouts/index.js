@@ -6,8 +6,6 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import '../styles/index.css';
 
-const GA_TRACKING_ID = 'UA-122348985-1';
-
 const query = graphql`
   query SiteTitleQuery {
     site {
@@ -15,6 +13,8 @@ const query = graphql`
         title
         desc
         keywords
+        tagline
+        tracking
       }
     }
   }
@@ -32,36 +32,56 @@ class Layout extends Component {
 
   render() {
     const { children } = this.props;
+
     return (
       <StaticQuery
         query={query}
-        render={data => (
+        render={({
+          site: {
+            siteMetadata: { title, desc, keywords, tagline, tracking },
+          },
+        }) => (
           <div>
             <Helmet
-              title={data.site.siteMetadata.title}
+              title={title}
               meta={[
-                { name: 'description', content: data.site.siteMetadata.desc },
-                { name: 'keywords', content: data.site.siteMetadata.keywords },
-                { name: 'viewport', content: 'width=device-width' },
-                { name: 'og:title', content: 'Out of Office Email Generator' },
+                {
+                  name: 'description',
+                  content: desc,
+                },
+                {
+                  name: 'keywords',
+                  content: keywords,
+                },
+                {
+                  name: 'viewport',
+                  content: 'width=device-width',
+                },
+                {
+                  name: 'og:title',
+                  content: title,
+                },
                 {
                   name: 'og:description',
-                  content: 'Because taking vacation should be fun.',
+                  content: tagline,
                 },
-                { name: 'og:image', content: '/og.png' },
+                {
+                  name: 'og:image',
+                  content: '/og-image.png',
+                },
               ]}
             >
               <link rel="shortcut icon" href="/favicon.ico" />
               <script
                 async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${tracking}`}
               />
               <script>
                 {`
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${GA_TRACKING_ID}');
+                  gtag('config', '${tracking}');
                 `}
               </script>
             </Helmet>

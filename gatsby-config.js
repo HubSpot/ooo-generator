@@ -4,6 +4,7 @@ module.exports = {
     desc: 'Generate fun Out of Office Email messages.',
     keywords: 'OOO vacation email generator fun hubspot',
     tagline: 'Because taking vacation should be fun.',
+    tracking: 'UA-122348985-1',
   },
   plugins: [
     {

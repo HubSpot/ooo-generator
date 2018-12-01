@@ -1,8 +1,10 @@
 # Project dependencies
 .cache
 node_modules
-package-lock.json
-/templates
+yarn.lock
+yarn-error.log
+npm-debug.log
 
 # Build directory
 /public
+.DS_Store

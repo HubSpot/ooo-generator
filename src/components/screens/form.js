@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Flex, Box } from 'rebass';
+import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import styled from 'styled-components';
 
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';

@@ -1,22 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import darkBackgroundOverlay from '../images/dark-background-overlay.png';
 
-import { blueish, blueishWithOpacity, grayish, whiteish } from './style/tokens';
+import background from '../images/background.png';
+import { black, slate, gray, white } from './style/tokens';
 
-const backgrounds = {
-  dark: blueish,
-  light: whiteish,
-};
-
-const textColors = {
-  light: grayish,
-  dark: blueish,
-};
-
-const backgroundOverlay = `linear-gradient(${blueishWithOpacity} 100%,
-  ${blueishWithOpacity} 0%), url(${darkBackgroundOverlay})`;
+const backgroundImage = `linear-gradient(${slate} 100%,
+  ${slate} 0%), url(${background})`;
 
 const Main = styled.main`
   margin: ${props => (props.align === 'center' ? 'auto' : 0)} auto;
@@ -29,10 +19,9 @@ const Main = styled.main`
 `;
 
 const Shell = styled.main`
-  background-color: ${({ dark }) =>
-    dark ? backgrounds.dark : backgrounds.light};
-  background-image: ${({ dark }) => dark && backgroundOverlay};
-  color: ${({ dark }) => (dark ? textColors.light : textColors.dark)};
+  background-color: ${({ dark }) => (dark ? black : white)};
+  background-image: ${({ dark }) => dark && backgroundImage};
+  color: ${({ dark }) => (dark ? gray : black)};
   display: flex;
   margin: 0;
   min-height: 100vh;

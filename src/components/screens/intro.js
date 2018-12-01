@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import logo from '../../images/hubspotlogo-web-white.png';
+import logo from '../../images/logo.png';
 import { getViewportHeight } from '../../lib/window';
 import { H1, H4 } from '../style/headers';
 import Page from '../page';

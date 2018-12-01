@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import Page from '../page';
-import { H3 } from '../style/headers';
 import Spinner from 'react-spinner';
+
+import { H3 } from '../style/headers';
+import Page from '../page';
 
 const Fullscreen = styled(Page)`
   position: fixed;
@@ -33,7 +33,7 @@ class LoadingPage extends React.Component {
   render() {
     return (
       <Fullscreen align="center" dark={true}>
-        <H3 color="whiteish" mb={4}>
+        <H3 color="white" mb={4}>
           Please wait while we generate
           <br />
           your vacation-worthy OOO message

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import { blueish, whiteish } from './tokens';
+import { black, white } from './tokens';
 
 export const ChoiceStyles = props => {
   return (
@@ -10,9 +10,9 @@ export const ChoiceStyles = props => {
       theme={createMuiTheme({
         palette: {
           primary: {
-            main: blueish,
-            dark: blueish,
-            contrastText: whiteish,
+            main: black,
+            dark: black,
+            contrastText: white,
           },
         },
         typography: {
@@ -34,8 +34,8 @@ export const FormStyles = props => {
       theme={createMuiTheme({
         palette: {
           primary: {
-            main: blueish,
-            dark: blueish,
+            main: black,
+            dark: black,
           },
         },
         typography: {

@@ -1,1 +1,10 @@
-.gitignore
+# Project dependencies
+.cache
+node_modules
+yarn.lock
+yarn-error.log
+npm-debug.log
+
+# Build directory
+/public
+.DS_Store

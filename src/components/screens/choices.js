@@ -7,10 +7,10 @@ import sampleSize from 'lodash/fp/sampleSize';
 
 import { MetadataPropTypes, interpolate } from '../../lib/templating';
 import { getDocumentHeight, getViewportHeight } from '../../lib/window';
+import { H1, H5 } from '../style/headers';
 import Page from '../page';
 import Choice from '../choice';
 import Affordance from '../affordance';
-import { H1, H5 } from '../style/headers';
 
 export default class Choices extends React.PureComponent {
   static propTypes = {
@@ -70,7 +70,7 @@ export default class Choices extends React.PureComponent {
 
     return (
       <Page align="center" textAlign="left" ref={this.ref}>
-        <H1 color="blueish">OOO Messages</H1>
+        <H1 color="black">OOO Messages</H1>
         <H5 mb={[2, 4]}>
           Pick the out of office message that will make your contacts smile.
           <br />

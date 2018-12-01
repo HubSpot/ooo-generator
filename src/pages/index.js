@@ -7,14 +7,16 @@ import IntroPage from '../components/screens/intro';
 import OutroPage from '../components/screens/outro';
 import GeneratorPage from '../components/screens/generator';
 
-const extractSiteMetadata = ({ site: { siteMetadata } }) => siteMetadata;
-
 const Wrapper = styled.div`
   position: relative;
 `;
 
 const IndexPage = ({ data }) => {
-  const { title, tagline } = extractSiteMetadata(data);
+  const {
+    site: {
+      siteMetadata: { title, tagline },
+    },
+  } = data;
 
   return (
     <Layout>

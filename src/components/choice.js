@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box, Heading } from 'rebass';
+import Clipboard from 'clipboard';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
-import Clipboard from 'clipboard';
 
-import { blueish } from './style/tokens';
+import { black } from './style/tokens';
 import { ChoiceStyles } from './style/themes';
 
 const Blurb = styled.p`
   margin-top: 8px;
   white-space: pre-wrap;
-  border-left: 0.2rem solid ${blueish};
+  border-left: 0.2rem solid ${black};
   padding-left: 1rem;
 
   @media (min-width: 1440px) {

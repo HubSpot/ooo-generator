@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Heading } from 'rebass';
+
 import omitProps from '../hoc/omitProps';
 import * as tokens from './tokens';
 

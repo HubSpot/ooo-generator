@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import Icon from '@material-ui/core/Icon';
 import debounce from 'lodash/debounce';
-import { whiteish, blueish } from './style/tokens';
+import Icon from '@material-ui/core/Icon';
+
+import { white, black } from './style/tokens';
 
 const bounce = keyframes`
   0%, 100% {
@@ -21,7 +22,7 @@ const BouncingIcon = styled(Icon).attrs(() => ({
   && {
     animation: ${bounce} 2s ease-in-out infinite;
     bottom: 0;
-    color: ${({ color }) => (color === 'primary' ? whiteish : blueish)};
+    color: ${({ color }) => (color === 'primary' ? white : black)};
     font-size: ${({ size }) => `${size}px`};
     left: 50%;
     margin-left: ${({ size }) => `-${size / 2}px`};

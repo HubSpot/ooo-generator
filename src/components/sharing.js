@@ -10,6 +10,7 @@ import {
 } from 'react-share';
 
 const URL = 'https://www.ooogenerator.com';
+
 const DESCRIPTION =
   "Vacation is exciting. So why isn't your OOO reply? Use this Out of Office Email Generator to get a personalized (and witty) reply to copy and paste in your inbox:";
 
