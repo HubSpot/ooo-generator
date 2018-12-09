@@ -4,14 +4,17 @@ import { Flex, Box } from 'rebass';
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 
 const StyledButton = styled(Button)`
-  margin-top: 48px !important;
-  margin-bottom: 42px !important;
   text-transform: uppercase;
 
   && span {
@@ -40,6 +43,18 @@ const StyledTextField = styled(TextField)`
   }
 `;
 
+const StyledInput = styled(Input)`
+  div {
+    font-family: 'Avenir Next W02';
+  }
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  span {
+    font-family: 'Avenir Next W02';
+  }
+`;
+
 const Description = styled.p`
   padding: 0 48px;
 `;
@@ -52,8 +67,23 @@ export default class Form extends React.Component {
     onSubmit: PropTypes.func,
   };
 
+  state = {
+    theme: 'holiday',
+  };
+
+  handleThemeChange = e => {
+    const {
+      target: { value: theme },
+    } = e;
+    const { handleChange } = this.props;
+
+    handleChange(e, 'theme');
+    this.setState({ theme });
+  };
+
   render() {
     const { handleChange, onSubmit } = this.props;
+    const { theme } = this.state;
 
     return (
       <Page align="center">
@@ -135,7 +165,7 @@ export default class Form extends React.Component {
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
-                  label="Activity (E.g. snorkeling)"
+                  label="Activity (e.g. snorkeling)"
                   id="activity"
                   name="activity"
                   onChange={e => handleChange(e, 'activity')}
@@ -147,7 +177,7 @@ export default class Form extends React.Component {
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
-                  label="Emergency Contact Name"
+                  label="Emergency contact name"
                   id="emergencyContactName"
                   name="emergencyContactName"
                   onChange={e => handleChange(e, 'emergencyContactName')}
@@ -157,23 +187,44 @@ export default class Form extends React.Component {
                 <StyledTextField
                   style={{ width: '100%' }}
                   required
-                  label="Emergency Contact Email"
+                  label="Emergency contact email"
                   id="emergencyContactEmail"
                   name="emergencyContactEmail"
                   onChange={e => handleChange(e, 'emergencyContactEmail')}
                 />
               </Box>
             </Flex>
-            <StyledButton
-              color="primary"
-              disableRipple
-              onClick={onSubmit}
-              size="large"
-              type="submit"
-              variant="contained"
-            >
-              Submit
-            </StyledButton>
+            <Flex justifyContent="center" flexDirection="column">
+              <Box mt={4}>
+                <FormControl>
+                  <InputLabel htmlFor="theme">Theme</InputLabel>
+                  <Select
+                    input={<StyledInput name="theme" id="theme" />}
+                    onChange={this.handleThemeChange}
+                    value={theme}
+                  >
+                    <StyledMenuItem value="holiday">
+                      <span>Holiday season</span>
+                    </StyledMenuItem>
+                    <StyledMenuItem value="summer">
+                      <span>Summertime</span>
+                    </StyledMenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <Box my={4}>
+                <StyledButton
+                  color="primary"
+                  disableRipple
+                  onClick={onSubmit}
+                  size="large"
+                  type="submit"
+                  variant="contained"
+                >
+                  Submit
+                </StyledButton>
+              </Box>
+            </Flex>
           </form>
         </FormStyles>
       </Page>
