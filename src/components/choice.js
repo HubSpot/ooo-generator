@@ -33,27 +33,6 @@ const StyledButton = styled(Button)`
     > span {
       font-family: 'Avenir Next W02';
     }
-
-    @media (min-width: 1440px) {
-      min-width: 110px;
-      > span {
-        font-size: 20px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      min-width: 80px;
-      > span {
-        font-size: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      min-width: 75px;
-      > span {
-        font-size: 14px;
-      }
-    }
   }
 `;
 
@@ -111,13 +90,13 @@ class Choice extends Component {
     return (
       <ChoiceStyles>
         <Flex alignItems="center" flexWrap="wrap" mb={10}>
-          <Box width={[1, null, 4 / 5]}>
+          <Box width={[1, null, 7 / 8]}>
             <Heading fontSize={24} mt={3}>
               {title}
             </Heading>
             <Blurb>{message}</Blurb>
           </Box>
-          <Box pl={[0, null, 4]} width={(1, null, 1 / 5)}>
+          <Box pl={[0, null, 4]} width={(1, null, 1 / 8)}>
             <Flex flexDirection="column">
               <StyledTooltip
                 open={timer != null}
@@ -128,7 +107,7 @@ class Choice extends Component {
                   buttonRef={$btn => (this.ref.current = $btn)}
                   color="primary"
                   disableRipple
-                  size="large"
+                  size="small"
                   variant="contained"
                 >
                   Copy
