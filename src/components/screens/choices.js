@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import map from 'lodash/fp/map';
 import compose from 'lodash/fp/compose';
+import filter from 'lodash/fp/filter';
 import sampleSize from 'lodash/fp/sampleSize';
 
 import { MetadataPropTypes, interpolate } from '../../lib/templating';
@@ -15,7 +16,12 @@ import Affordance from '../affordance';
 export default class Choices extends React.PureComponent {
   static propTypes = {
     metadata: MetadataPropTypes,
-    templates: PropTypes.arrayOf(PropTypes.string),
+    templates: PropTypes.arrayOf(
+      PropTypes.shape({
+        template: PropTypes.string,
+        theme: PropTypes.string,
+      })
+    ),
   };
 
   static defaultProps = {
@@ -34,10 +40,16 @@ export default class Choices extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const { metadata, templates } = this.props;
+    const {
+      metadata,
+      metadata: { theme: selected },
+      templates,
+    } = this.props;
+
     const [first, second] = compose(
       map(interpolate(metadata)),
-      sampleSize(2)
+      sampleSize(2),
+      filter(({ theme }) => theme === selected)
     )(templates);
 
     this.state = { first, second };
