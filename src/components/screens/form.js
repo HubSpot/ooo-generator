@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -70,25 +71,57 @@ export default class Form extends React.Component {
   static propTypes = {
     handleChange: PropTypes.func.isRequired,
     onSubmit: PropTypes.func,
+    metadata: PropTypes.object,
   };
 
   state = {
-    theme: Themes.HOLIDAY,
+    errors: {},
   };
 
-  handleThemeChange = e => {
+  handleSubmit = e => {
+    const { onSubmit, metadata } = this.props;
+    const errors = Object.keys(metadata).reduce(
+      (memo, field) =>
+        !metadata[field].trim() ? { ...memo, [field]: true } : memo,
+      {}
+    );
+
+    if (Object.keys(errors).length === 0) {
+      onSubmit(e);
+    } else {
+      e.preventDefault();
+      this.setState({ errors });
+    }
+  };
+
+  renderField(field, label) {
     const {
-      target: { value: theme },
-    } = e;
-    const { handleChange } = this.props;
+      handleChange,
+      metadata: { [field]: value },
+    } = this.props;
+    const {
+      errors: { [field]: error },
+    } = this.state;
 
-    handleChange(e, 'theme');
-    this.setState({ theme });
-  };
+    return (
+      <FormControl style={{ width: '100%' }} error={error}>
+        <StyledTextField
+          error={error}
+          label={label}
+          id={field}
+          name={field}
+          onChange={e => handleChange(e, field)}
+          value={value}
+        />
+        <FormHelperText>
+          {error ? 'Please fill out required field' : ''}
+        </FormHelperText>
+      </FormControl>
+    );
+  }
 
   render() {
-    const { handleChange, onSubmit } = this.props;
-    const { theme } = this.state;
+    const { handleChange, metadata } = this.props;
 
     return (
       <Page align="center">
@@ -112,91 +145,41 @@ export default class Form extends React.Component {
         <FormStyles>
           <form>
             <Flex justifyContent="center" flexWrap="wrap">
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="First name"
-                  id="firstName"
-                  name="firstName"
-                  onChange={e => handleChange(e, 'firstName')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('firstName', 'First name')}
               </Box>
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Last name"
-                  id="lastName"
-                  name="lastName"
-                  onChange={e => handleChange(e, 'lastName')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('lastName', 'Last name')}
               </Box>
             </Flex>
             <Flex justifyContent="center" flexWrap="wrap">
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Vacation start date"
-                  id="leaveDate"
-                  name="leaveDate"
-                  onChange={e => handleChange(e, 'leaveDate')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('leaveDate', 'Vacation start date')}
               </Box>
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Vacation end date"
-                  id="returnDate"
-                  name="returnDate"
-                  onChange={e => handleChange(e, 'returnDate')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('returnDate', 'Vacation end date')}
               </Box>
             </Flex>
             <Flex justifyContent="center" flexWrap="wrap">
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Destination"
-                  id="destination"
-                  name="destination"
-                  onChange={e => handleChange(e, 'destination')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('destination', 'Destination')}
               </Box>
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Activity (e.g. snorkeling)"
-                  id="activity"
-                  name="activity"
-                  onChange={e => handleChange(e, 'activity')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField('activity', 'Activity (e.g. skiing)')}
               </Box>
             </Flex>
             <Flex justifyContent="center" flexWrap="wrap">
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Emergency contact name"
-                  id="emergencyContactName"
-                  name="emergencyContactName"
-                  onChange={e => handleChange(e, 'emergencyContactName')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField(
+                  'emergencyContactName',
+                  'Emergency contact name'
+                )}
               </Box>
-              <Box px={3} pt={4} width={responsiveWidths}>
-                <StyledTextField
-                  style={{ width: '100%' }}
-                  required
-                  label="Emergency contact email"
-                  id="emergencyContactEmail"
-                  name="emergencyContactEmail"
-                  onChange={e => handleChange(e, 'emergencyContactEmail')}
-                />
+              <Box px={3} pt={3} width={responsiveWidths}>
+                {this.renderField(
+                  'emergencyContactEmail',
+                  'Emergency contact email'
+                )}
               </Box>
             </Flex>
             <Flex justifyContent="center" flexDirection="column">
@@ -205,8 +188,8 @@ export default class Form extends React.Component {
                   <InputLabel htmlFor="theme">Theme</InputLabel>
                   <Select
                     input={<StyledInput name="theme" id="theme" />}
-                    onChange={this.handleThemeChange}
-                    value={theme}
+                    onChange={e => handleChange(e, 'theme')}
+                    value={metadata.theme}
                   >
                     <StyledMenuItem value={Themes.HOLIDAY}>
                       <span>Holiday season</span>
@@ -221,7 +204,7 @@ export default class Form extends React.Component {
                 <StyledButton
                   color="primary"
                   disableRipple
-                  onClick={onSubmit}
+                  onClick={this.handleSubmit}
                   size="large"
                   type="submit"
                   variant="contained"

@@ -41,7 +41,6 @@ export default class Generator extends React.Component {
   constructor(props) {
     super(props);
     const templates = extractTemplates(props.data);
-    const { formData } = this.state;
 
     this.components = [
       {
@@ -57,7 +56,7 @@ export default class Generator extends React.Component {
       },
       {
         component: Choices,
-        props: { templates, metadata: formData },
+        props: { templates },
       },
     ];
   }
@@ -87,9 +86,9 @@ export default class Generator extends React.Component {
   };
 
   render() {
-    const { step } = this.state;
+    const { step, formData: metadata } = this.state;
     const { component: Component, props } = this.components[step];
 
-    return <Component {...props} />;
+    return <Component {...props} metadata={metadata} />;
   }
 }
