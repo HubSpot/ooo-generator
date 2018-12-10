@@ -47,6 +47,9 @@ export const query = graphql`
       edges {
         node {
           rawMarkdownBody
+          frontmatter {
+            theme
+          }
         }
       }
     }

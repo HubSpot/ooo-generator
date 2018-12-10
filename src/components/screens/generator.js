@@ -6,7 +6,17 @@ import Loading from './loading';
 import Choices from './choices';
 
 const extractTemplates = ({ allMarkdownRemark: { edges } }) =>
-  edges.map(({ node: { rawMarkdownBody } }) => rawMarkdownBody);
+  edges.map(
+    ({
+      node: {
+        rawMarkdownBody: template,
+        frontmatter: { theme },
+      },
+    }) => ({
+      template,
+      theme,
+    })
+  );
 
 export default class Generator extends React.Component {
   static propTypes = {

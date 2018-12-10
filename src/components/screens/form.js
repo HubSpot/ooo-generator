@@ -14,6 +14,11 @@ import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
 
+const Themes = {
+  HOLIDAY: 'holiday',
+  SUMMER: 'summer',
+};
+
 const StyledButton = styled(Button)`
   text-transform: uppercase;
 
@@ -68,7 +73,7 @@ export default class Form extends React.Component {
   };
 
   state = {
-    theme: 'holiday',
+    theme: Themes.HOLIDAY,
   };
 
   handleThemeChange = e => {
@@ -203,10 +208,10 @@ export default class Form extends React.Component {
                     onChange={this.handleThemeChange}
                     value={theme}
                   >
-                    <StyledMenuItem value="holiday">
+                    <StyledMenuItem value={Themes.HOLIDAY}>
                       <span>Holiday season</span>
                     </StyledMenuItem>
-                    <StyledMenuItem value="summer">
+                    <StyledMenuItem value={Themes.SUMMER}>
                       <span>Summertime</span>
                     </StyledMenuItem>
                   </Select>
