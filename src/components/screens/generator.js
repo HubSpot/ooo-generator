@@ -52,11 +52,11 @@ export default class Generator extends React.Component {
       },
       {
         component: Loading,
-        props: { timeout: 2000, onNextStep: this.nextStep },
+        props: { timeout: 1600, onNextStep: this.nextStep },
       },
       {
         component: Choices,
-        props: { templates },
+        props: { templates, onPrevStep: this.prevStep },
       },
     ];
   }
@@ -67,6 +67,12 @@ export default class Generator extends React.Component {
         ...prevState.formData,
         [field]: value,
       },
+    }));
+  };
+
+  prevStep = () => {
+    this.setState(prev => ({
+      step: prev.step - 1,
     }));
   };
 

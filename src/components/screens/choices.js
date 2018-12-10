@@ -1,21 +1,34 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import map from 'lodash/fp/map';
 import compose from 'lodash/fp/compose';
 import filter from 'lodash/fp/filter';
 import sampleSize from 'lodash/fp/sampleSize';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 import { MetadataPropTypes, interpolate } from '../../lib/templating';
 import { getDocumentHeight, getViewportHeight } from '../../lib/window';
 import { H1, H5 } from '../style/headers';
+import { ChoiceStyles } from '../style/themes';
 import Page from '../page';
 import Choice from '../choice';
 import Affordance from '../affordance';
 
+const StyledButton = styled(Button)`
+  margin-bottom: 16px !important;
+`;
+
+const StyledIcon = styled(Icon)`
+  margin-right: 8px;
+`;
+
 export default class Choices extends React.PureComponent {
   static propTypes = {
     metadata: MetadataPropTypes,
+    onPrevStep: PropTypes.func,
     templates: PropTypes.arrayOf(
       PropTypes.shape({
         template: PropTypes.string,
@@ -78,6 +91,7 @@ export default class Choices extends React.PureComponent {
   };
 
   render() {
+    const { onPrevStep } = this.props;
     const { first, second, threshold } = this.state;
 
     return (
@@ -90,6 +104,19 @@ export default class Choices extends React.PureComponent {
           <br />
           {"Then get out of here. It's vacation time!"}
         </H5>
+        <ChoiceStyles>
+          <StyledButton
+            color="primary"
+            disableRipple
+            onClick={onPrevStep}
+            size="small"
+            type="submit"
+            variant="contained"
+          >
+            <StyledIcon>refresh</StyledIcon>
+            Regenerate
+          </StyledButton>
+        </ChoiceStyles>
         <Choice title="Message #1" message={first} />
         <Choice title="Message #2" message={second} />
         <Affordance
