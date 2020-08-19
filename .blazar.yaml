@@ -1,6 +1,6 @@
 env:
   DEVTOOLSET_EXEC: $WORKSPACE/.devtoolset-exec
-  NODE_VERSION: 12.10.0
+  NODE_VERSION: 11.15.0
 
 steps:
   - description: make devtoolset-exec
@@ -28,4 +28,4 @@ steps:
 
 stepActivation:
   deploy:
-    branches: ['master']
+    branches: ["master"]
