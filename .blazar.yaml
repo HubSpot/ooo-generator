@@ -1,6 +1,6 @@
 env:
   DEVTOOLSET_EXEC: $WORKSPACE/.devtoolset-exec
-  NODE_VERSION: 8.9.3
+  NODE_VERSION: 12.10.0
 
 steps:
   - description: make devtoolset-exec
