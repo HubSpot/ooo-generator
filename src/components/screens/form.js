@@ -18,6 +18,7 @@ import Page from '../page';
 const Themes = {
   HOLIDAY: 'holiday',
   SUMMER: 'summer',
+  VOTING: 'voting',
 };
 
 const StyledButton = styled(Button)`
@@ -191,6 +192,9 @@ export default class Form extends React.Component {
                     onChange={e => handleChange(e, 'theme')}
                     value={metadata.theme}
                   >
+                    <StyledMenuItem value={Themes.VOTING}>
+                      <span>Voting</span>
+                    </StyledMenuItem>
                     <StyledMenuItem value={Themes.HOLIDAY}>
                       <span>Holiday season</span>
                     </StyledMenuItem>
