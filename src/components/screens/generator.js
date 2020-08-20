@@ -44,6 +44,21 @@ export default class Generator extends React.Component {
         props: { templates, onPrevStep: this.prevStep },
       },
     ];
+
+    this.state = {
+      step: 0,
+      formData: {
+        firstName: '',
+        lastName: '',
+        leaveDate: '',
+        returnDate: '',
+        destination: '',
+        activity: '',
+        emergencyContactName: '',
+        emergencyContactEmail: '',
+        theme: 'holiday',
+      },
+    };
   }
 
   state = {

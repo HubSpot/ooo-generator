@@ -23,7 +23,6 @@ const query = graphql`
 class Layout extends Component {
   static propTypes = {
     children: PropTypes.node,
-    data: PropTypes.object,
   };
 
   componentDidMount() {
