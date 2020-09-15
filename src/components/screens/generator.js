@@ -56,7 +56,7 @@ export default class Generator extends React.Component {
         activity: '',
         emergencyContactName: '',
         emergencyContactEmail: '',
-        theme: 'holiday',
+        theme: 'voting',
       },
     };
   }
