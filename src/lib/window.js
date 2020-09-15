@@ -7,6 +7,6 @@ export const getViewportHeight = attempt(() =>
   Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 );
 
-export const getDocumentHeight = attempt(
-  () => (document ? document.body.scrollHeight : 0)
+export const getDocumentHeight = attempt(() =>
+  document ? document.body.scrollHeight : 0
 );

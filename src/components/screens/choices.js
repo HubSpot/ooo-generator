@@ -42,14 +42,6 @@ export default class Choices extends React.PureComponent {
     templates: [],
   };
 
-  ref = React.createRef();
-
-  state = {
-    first: null,
-    second: null,
-    threshold: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -65,7 +57,12 @@ export default class Choices extends React.PureComponent {
       filter(({ theme }) => theme === selected)
     )(templates);
 
-    this.state = { first, second };
+    this.ref = React.createRef();
+    this.state = {
+      first: first || null,
+      second: second || null,
+      threshold: null,
+    };
   }
 
   componentDidMount() {

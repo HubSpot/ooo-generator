@@ -49,12 +49,13 @@
     "eslint": "eslint",
     "gatsby": "gatsby",
     "gh-pages": "gh-pages",
-    "prettier": "prettier",
+    "prettier": "prettier --list-different 'src/**/*.{md,css,js,json}'",
     "lint": "eslint '**/*.js'",
     "format": "prettier --write '**/*.{md,css,js,json}'",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "build:deploy": "gatsby build && gh-pages -d public"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
