@@ -94,7 +94,7 @@ class Choice extends Component {
             <Heading fontSize={24} mt={3}>
               {title}
             </Heading>
-            <Blurb>{message}</Blurb>
+            <Blurb dangerouslySetInnerHTML={{ __html: message }} />
           </Box>
           <Box pl={[0, null, 4]} width={(1, null, 1 / 8)}>
             <Flex flexDirection="column">

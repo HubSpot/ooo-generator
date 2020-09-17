@@ -20,6 +20,29 @@ export const MetadataPropTypes = PropTypes.shape(
     {}
   )
 );
+const escapeMap = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#x27;',
+  '`': '&#x60;',
+};
+
+function escaper(match) {
+  return escapeMap[match];
+}
+
+const source = `(?:${Object.keys(escapeMap).join('|')})`;
+const testRegexp = new RegExp(source);
+const replaceRegexp = new RegExp(source, 'g');
+
+function escape(string) {
+  string = !string ? '' : `${string}`;
+  return testRegexp.test(string)
+    ? string.replace(replaceRegexp, escaper)
+    : string;
+}
 
 export const interpolate = metadata => ({ template }) =>
   Object.keys(Fields).reduce(
@@ -27,7 +50,7 @@ export const interpolate = metadata => ({ template }) =>
       Object.prototype.hasOwnProperty.call(metadata, field)
         ? interpolated.replace(
             new RegExp(`\\[${Fields[field]}\\]`, 'g'),
-            metadata[field]
+            escape(metadata[field])
           )
         : interpolated,
     template

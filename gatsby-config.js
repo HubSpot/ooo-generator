@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Out of Office Email Generator',
-    desc: 'Generate fun Out of Office Email messages.',
-    keywords: 'OOO vacation email generator fun hubspot',
-    tagline: 'Because taking vacation should be fun.',
+    desc: "Let's say goodbye to boring OOO emails.",
+    keywords: 'OOO vacation voting email generator fun hubspot',
+    tagline: "Let's say goodbye to boring OOO emails.",
     tracking: 'UA-122348985-1',
   },
   plugins: [

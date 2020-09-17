@@ -23,21 +23,6 @@ export default class Generator extends React.Component {
     data: PropTypes.object,
   };
 
-  state = {
-    step: 0,
-    formData: {
-      firstName: '',
-      lastName: '',
-      leaveDate: '',
-      returnDate: '',
-      destination: '',
-      activity: '',
-      emergencyContactName: '',
-      emergencyContactEmail: '',
-      theme: 'holiday',
-    },
-  };
-
   constructor(props) {
     super(props);
     const templates = extractTemplates(props.data);
@@ -59,7 +44,37 @@ export default class Generator extends React.Component {
         props: { templates, onPrevStep: this.prevStep },
       },
     ];
+
+    this.state = {
+      step: 0,
+      formData: {
+        firstName: '',
+        lastName: '',
+        leaveDate: '',
+        returnDate: '',
+        destination: '',
+        activity: '',
+        emergencyContactName: '',
+        emergencyContactEmail: '',
+        theme: 'voting',
+      },
+    };
   }
+
+  state = {
+    step: 0,
+    formData: {
+      firstName: '',
+      lastName: '',
+      leaveDate: '',
+      returnDate: '',
+      destination: '',
+      activity: '',
+      emergencyContactName: '',
+      emergencyContactEmail: '',
+      theme: 'voting',
+    },
+  };
 
   handleChange = ({ target: { value } }, field) => {
     this.setState(prevState => ({

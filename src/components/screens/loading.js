@@ -36,7 +36,7 @@ class LoadingPage extends React.Component {
         <H3 color="white" mb={4}>
           Please wait while we generate
           <br />
-          your vacation-worthy OOO message
+          your OOO message.
         </H3>
         <Spinner />
       </Fullscreen>

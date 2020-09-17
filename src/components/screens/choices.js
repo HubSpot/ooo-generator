@@ -42,14 +42,6 @@ export default class Choices extends React.PureComponent {
     templates: [],
   };
 
-  ref = React.createRef();
-
-  state = {
-    first: null,
-    second: null,
-    threshold: null,
-  };
-
   constructor(props) {
     super(props);
 
@@ -65,7 +57,12 @@ export default class Choices extends React.PureComponent {
       filter(({ theme }) => theme === selected)
     )(templates);
 
-    this.state = { first, second };
+    this.ref = React.createRef();
+    this.state = {
+      first: first || null,
+      second: second || null,
+      threshold: null,
+    };
   }
 
   componentDidMount() {
@@ -101,8 +98,6 @@ export default class Choices extends React.PureComponent {
           Pick the out of office message that will make your contacts smile.
           <br />
           Copy it to your clipboard and paste it into your email settings.
-          <br />
-          {"Then get out of here. It's vacation time!"}
         </H5>
         <ChoiceStyles>
           <StyledButton
