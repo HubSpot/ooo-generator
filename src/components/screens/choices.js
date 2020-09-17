@@ -98,8 +98,6 @@ export default class Choices extends React.PureComponent {
           Pick the out of office message that will make your contacts smile.
           <br />
           Copy it to your clipboard and paste it into your email settings.
-          <br />
-          {"Then get out of here. It's vacation time!"}
         </H5>
         <ChoiceStyles>
           <StyledButton

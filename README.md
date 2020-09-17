@@ -1,6 +1,6 @@
 # Out of Office Email Generator
 
-> Generate Out of Office Email messages. Because taking vacation should be fun.
+> Generate Out of Office Email messages.
 
 ## Contributing
 

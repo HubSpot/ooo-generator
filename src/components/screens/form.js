@@ -127,21 +127,25 @@ export default class Form extends React.Component {
     return (
       <Page align="center">
         <H2 mb={4} style={{ paddingTop: '40px' }}>
-          You’re Ready For Vacation.
+          You’re Ready to Take Time Off.
           <br />
           But Is Your Inbox?
         </H2>
         <Description>
           {`
-            Whether you're going on a tropical trip or headed home for the
-            holidays, you have to write an out of office email responder. So,
-            why not write a good one? Saying "Sorry, I have limited access to
-            Wifi" isn't fooling anyone. (We know you aren't sorry.)
+            Whether you’re going on a tropical trip or taking a personal day to
+            unplug, you’ll have to write an out of office email responder. So
+            why not write a good one? Let’s retire phrases like "Sorry, I have
+            limited access to Wifi.” You shouldn’t be sorry, we all need to take
+            a break sometimes. (And you’re not fooling anyone about the Wifi.)
           `}
         </Description>
         <Description>
-          {`Share quick details about your time away and the generator will give
-          you an 'OOO' email that's as fun as your vacation. (Well, almost.)`}
+          {`
+            Fill out quick details about your time away and the generator will
+            give you a personalized and playful 'OOO' email. Copy-paste it into
+            your email settings and enjoy your time away.
+          `}
         </Description>
         <FormStyles>
           <form>
@@ -155,10 +159,10 @@ export default class Form extends React.Component {
             </Flex>
             <Flex justifyContent="center" flexWrap="wrap">
               <Box px={3} pt={3} width={responsiveWidths}>
-                {this.renderField('leaveDate', 'Vacation start date')}
+                {this.renderField('leaveDate', 'OOO start date')}
               </Box>
               <Box px={3} pt={3} width={responsiveWidths}>
-                {this.renderField('returnDate', 'Vacation end date')}
+                {this.renderField('returnDate', 'OOO end date')}
               </Box>
             </Flex>
             <Flex justifyContent="center" flexWrap="wrap">

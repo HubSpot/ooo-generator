@@ -11,26 +11,25 @@ const OutroPage = () => {
     <Page maxWidth={1050} dark={true} align="center" textAlign="left">
       <Flex>
         <Box width={750} align="center">
-          <H2 my={4}>There’s A Lot to Love About Vacation.</H2>
+          <H2 my={4}>There’s A Lot to Love About Flexibility.</H2>
           <H5 my={4}>
-            Time off from work helps us recharge.
-            <br />
-            Whether you relax on the beach, hike a mountain, or spend time with
-            family, taking a (guilt-free) vacation makes you better and happier
-            at the office.
+            We all need time off from work. Maybe it’s to unplug on vacation,
+            spend time with family, or to leave work early for personal reasons.
+            Whatever the reason you’re OOO, you shouldn’t feel guilty. Time off
+            is good for the soul.
           </H5>
           <H5 my={4}>
-            That&apos;s why HubSpot&apos;s a big fan of flexibility. Our
-            unlimited vacation policy (and its OOO messages) is just one way we
-            try to create a flexible, inclusive culture. Learn more about
-            working at HubSpot at{' '}
+            That&apos;s why HubSpot&apos;s a big fan of flexibility. Our hybrid
+            remote-office model and unlimited vacation policy are just a few
+            ways we try to create a flexible, inclusive culture. Learn more
+            about working at HubSpot at{' '}
             <a
               style={{ color: 'white' }}
-              href="https://hubspot.com/jobs"
+              href="https://hubspot.com/careers"
               target="_blank"
               rel="noopener noreferrer"
             >
-              hubspot.com/jobs
+              hubspot.com/careers
             </a>
           </H5>
           <Sharing />
