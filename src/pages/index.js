@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Wrapper>
-        <IntroPage tagline={tagline} title={title} />
+        <IntroPage title={title} tagline={tagline} />
         <GeneratorPage data={data} />
         <OutroPage />
       </Wrapper>
