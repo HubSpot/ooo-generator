@@ -14,6 +14,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { FormStyles } from '../style/themes';
 import { H2 } from '../style/headers';
 import Page from '../page';
+import { Description } from '../style/text';
 
 const Themes = {
   HOLIDAY: 'holiday',
@@ -60,10 +61,6 @@ const StyledMenuItem = styled(MenuItem)`
   span {
     font-family: 'Avenir Next W02';
   }
-`;
-
-const Description = styled.p`
-  padding: 0 48px;
 `;
 
 const responsiveWidths = [9 / 10, 1 / 2, 2 / 5];
