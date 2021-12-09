@@ -4,11 +4,20 @@ import Sharing from '../sharing';
 import logo from '../../images/logo.png';
 import { H3 } from '../style/headers';
 import { Description } from '../style/text';
+import styled from 'styled-components';
+
+const AlignedList = styled.ol`
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 15%;
+`;
 
 const FAQPage = () => {
   return (
-    <Page maxWidth={1050} dark={false} align="center" text-align="left">
-      <H3>What Does the Out of Office Email Generator do?</H3>
+    <Page maxWidth={1050} dark={false} align="center">
+      <H3 role="heading" aria-level="3">
+        What Does the Out of Office Email Generator do?
+      </H3>
 
       <Description>
         The OOO Email Generator helps you to create an entertaining message to
@@ -16,7 +25,9 @@ const FAQPage = () => {
         your absence in style.
       </Description>
 
-      <H3>How Does the OOO Generator work?</H3>
+      <H3 role="heading" aria-level="3">
+        How Does the OOO Generator work?
+      </H3>
 
       <Description>
         In order to generate your personalized message, this tool uses
@@ -25,7 +36,7 @@ const FAQPage = () => {
       </Description>
 
       <Description>The steps to create an out of office email are:</Description>
-      <ol>
+      <AlignedList>
         <li>
           Fill out details about your upcoming time away: name, dates,
           destination, activity, emergency contact and email address
@@ -46,9 +57,11 @@ const FAQPage = () => {
         <li>Paste it into your email settings</li>
 
         <li>Shine even when you are not at the office</li>
-      </ol>
+      </AlignedList>
 
-      <H3>What Does OOO stand for?</H3>
+      <H3 role="heading" aria-level="3">
+        What Does OOO stand for?
+      </H3>
 
       <Description>
         OOO is an abbreviation meaning Out of Office, commonly used in
