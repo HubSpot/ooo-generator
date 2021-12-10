@@ -6,6 +6,7 @@ import Layout from '../layouts';
 import IntroPage from '../components/screens/intro';
 import OutroPage from '../components/screens/outro';
 import GeneratorPage from '../components/screens/generator';
+import FAQPage from '../components/screens/faq';
 
 const Wrapper = styled.div`
   position: relative;
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => {
         <IntroPage title={title} tagline={tagline} />
         <GeneratorPage data={data} />
         <OutroPage />
+        <FAQPage />
       </Wrapper>
     </Layout>
   );

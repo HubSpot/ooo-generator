@@ -1,9 +1,7 @@
 import React from 'react';
 import { Flex, Box } from 'rebass';
 
-import logo from '../../images/logo.png';
 import { H2, H5 } from '../style/headers';
-import Sharing from '../sharing';
 import Page from '../page';
 
 const OutroPage = () => {
@@ -32,8 +30,6 @@ const OutroPage = () => {
               hubspot.com/careers
             </a>
           </H5>
-          <Sharing />
-          <img width="160" src={logo} />
         </Box>
       </Flex>
     </Page>
