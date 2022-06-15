@@ -42,10 +42,7 @@ const FAQPage = () => {
           destination, activity, emergency contact and email address
         </li>
 
-        <li>
-          Choose a theme for your message: either Voting, Holiday Season or
-          Summertime
-        </li>
+        <li>Choose a theme for your message</li>
 
         <li>Click on “Submit”</li>
 

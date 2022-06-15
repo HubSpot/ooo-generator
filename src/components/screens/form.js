@@ -20,6 +20,7 @@ const Themes = {
   HOLIDAY: 'holiday',
   SUMMER: 'summer',
   VOTING: 'voting',
+  SUSTAINABILITY: 'sustainability',
 };
 
 const StyledButton = styled(Button)`
@@ -201,6 +202,9 @@ export default class Form extends React.Component {
                     </StyledMenuItem>
                     <StyledMenuItem value={Themes.SUMMER}>
                       <span>Summertime</span>
+                    </StyledMenuItem>
+                    <StyledMenuItem value={Themes.SUSTAINABILITY}>
+                      <span>Sustainability</span>
                     </StyledMenuItem>
                   </Select>
                 </FormControl>
