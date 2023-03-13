@@ -31,14 +31,14 @@ const Blurb = styled.p`
 const StyledButton = styled(Button)`
   && {
     > span {
-      font-family: 'Avenir Next W02';
+      font-family: 'Lexend Deca';
     }
   }
 `;
 
 const StyledTooltip = styled(Tooltip)`
   && div {
-    font-family: 'Avenir Next W02';
+    font-family: 'Lexend Deca';
   }
 `;
 

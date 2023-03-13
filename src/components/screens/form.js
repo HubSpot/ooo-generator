@@ -27,7 +27,7 @@ const StyledButton = styled(Button)`
   text-transform: uppercase;
 
   && span {
-    font-family: 'Avenir Next W02';
+    font-family: 'Lexend Deca';
     color: white;
     line-height: 1;
   }
@@ -36,7 +36,7 @@ const StyledButton = styled(Button)`
 const StyledTextField = styled(TextField)`
   input,
   label {
-    font-family: 'Avenir Next W02';
+    font-family: 'Lexend Deca';
 
     @media (min-width: 1440px) {
       font-size: 16px;
@@ -54,13 +54,13 @@ const StyledTextField = styled(TextField)`
 
 const StyledInput = styled(Input)`
   div {
-    font-family: 'Avenir Next W02';
+    font-family: 'Lexend Deca;
   }
 `;
 
 const StyledMenuItem = styled(MenuItem)`
   span {
-    font-family: 'Avenir Next W02';
+    font-family: 'Lexend Deca';
   }
 `;
 
