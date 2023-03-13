@@ -16,10 +16,10 @@ const fontSizes = {
 
 const baseTextStyles = css`
   color: ${({ color }) => tokens[color] || color};
-  font-family: Avenir Next W02;
+  font-family: Lexend Deca;
   font-size: ${({ size }) =>
     typeof size === 'number' ? `${size}px` : `${fontSizes[size]}px`};
-  font-weight: ${({ bold }) => (bold ? 'bold' : 'normal')};
+  font-weight: ${({ bold }) => (bold ? 'bolder' : 'normal')};
   text-transform: ${({ upper }) => (upper ? 'uppercase' : 'none')};
 `;
 
