@@ -1,5 +1,8 @@
 # Out of Office Email Generator
 
+> [!WARNING]  
+> This project is archived as of 7 February 2024. The most recent version of the code remains deployed at https://github.hubspot.com/ooo-generator/
+
 > Generate Out of Office Email messages.
 
 ## Contributing
